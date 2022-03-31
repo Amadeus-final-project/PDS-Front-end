@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import {ProfileComponent} from "./user/profile/profile.component";
 //import { UserModule } from './user/user.module';
 
 
@@ -18,7 +19,8 @@ import { RegisterComponent } from './user/register/register.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

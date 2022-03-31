@@ -1,1 +1,44 @@
-<p>profile works!</p>
+<div class ="container">
+  <form name="profile-form" (ngSubmit)="f.form.valid && editProfile()" #f="ngForm" novalidate>
+    <div [ngClass]="{ 'has-error': f.submitted && !phoneNumber.valid }">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text"
+             name="username" [(ngModel)]="model.username"
+             #phoneNumber="ngModel" required />
+      <div *ngIf="f.submitted
+              && !phoneNumber.valid">Username is required</div>
+    </div>
+
+
+    <div [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
+      <label for="firstName">First name</label>
+      <input type="text"
+             name="firstName" [(ngModel)]="model.firstName"
+             #firstName="ngModel" required />
+      <div *ngIf="f.submitted
+              && !firstName.valid">First name is required</div>
+    </div>
+
+    <div [ngClass]="{ 'has-error': f.submitted && !model.lastName.valid }">
+      <label for="lastName">Last name</label>
+      <input type="text"
+             name="lastName" [(ngModel)]="model.lastName"
+             #firstName="ngModel" required />
+      <div *ngIf="f.submitted
+              && !model.lastName.valid">Last name is required</div>
+    </div>
+    <div [ngClass]="{ 'has-error': f.submitted && !model.email.valid }">
+      <label for="email">Email</label>
+      <input type="email"
+             name="email" [(ngModel)]="model.email"
+             #password="ngModel" required />
+      <div *ngIf="f.submitted
+              && !model.email.valid">Please enter valid email</div>
+    </div>
+
+
+    <div>
+      <button>Edit Profile</button>
+    </div>
+  </form>
+</div>>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUser, RegisterUser } from './user';
+import {EditUser, IUser, RegisterUser} from './user';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -18,12 +18,14 @@ export class UserService {
   private baseURL ="http://localhost:9000/users/";
   private loginURL ="http://localhost:9000/users/login";
   private registerURL ="http://localhost:9000/users/register";
+  private editUserURL = "http://localhost:9000/users/edit";
 
 
   constructor(private httpClient: HttpClient) { }
 
   registerUser: RegisterUser | undefined;
   loginUsers: IUser | undefined;
+  editUser: EditUser |undefined;
 
   loginUser(email:string, password:string){
     this.loginUsers = {
@@ -59,5 +61,16 @@ export class UserService {
   logout(): void {
       this.user = undefined;
   }
+  editProfile(phoneNumber:string,firstName:string,lastName:string,email:string){
+    this.editUser = {
+        phoneNumber: phoneNumber,
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+    }
+    return this.httpClient.put<any>(this.editUserURL, this.editUser);
+
+
+}
 
 }
