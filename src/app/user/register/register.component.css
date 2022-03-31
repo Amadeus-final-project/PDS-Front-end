@@ -1,0 +1,24 @@
+
+form.login, form.register {
+    width: 40%;
+    text-align: center;
+}
+
+
+.login input, .register input {
+    flex: 0 1 100%;
+    border: 1px solid;
+}
+
+.login button, .register button {
+    color: darkblue;
+    border: none;
+    width: 60%;
+    outline: none;
+}
+
+
+.login .field, .register .field {
+    display: flex;
+    padding-bottom: 0;
+}
