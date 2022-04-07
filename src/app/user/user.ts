@@ -18,3 +18,7 @@ export interface EditUser{
   lastName:string;
   email:string;
 }
+
+export interface forgottenUser{
+  email: string;
+}

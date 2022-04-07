@@ -9,13 +9,20 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class HeaderComponent implements OnInit {
 
+
   constructor(private userService: UserService,
     private router: Router) { }
 
 
+
+    public get isLogged(): boolean {
+      return !!this.userService.isLoggedIn;
+    }
+
   logout():void{
-    this.userService.logout();
-    this.router.navigate(['/']);
+    sessionStorage.removeItem('token');
+    this.router.navigate(['/logout']);
+    this.userService.isLoggedIn = false;
   }
 
   ngOnInit(): void {

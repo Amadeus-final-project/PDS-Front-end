@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EditUser, IUser, RegisterUser} from './user';
+import {EditUser, IUser, RegisterUser, forgottenUser} from './user';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -11,14 +11,11 @@ export class UserService {
   user: IUser | undefined;
 
 
-  get isLogged(): boolean {
-    return !!this.user;
+  public get isLogged(): boolean {
+    return this.isLoggedIn
   }
 
-  private baseURL ="http://localhost:9000/users/";
-  private loginURL ="http://localhost:9000/users/login";
-  private registerURL ="http://localhost:9000/users/register";
-  private editUserURL = "http://localhost:9000/users/edit";
+  private baseUsersURL ="http://localhost:9000/users/";
 
 
   constructor(private httpClient: HttpClient) { }
@@ -26,14 +23,20 @@ export class UserService {
   registerUser: RegisterUser | undefined;
   loginUsers: IUser | undefined;
   editUser: EditUser |undefined;
+  
+  isLoggedIn:boolean = false;
 
-  loginUser(email:string, password:string){
-    this.loginUsers = {
-      email: email,
-      password: password
-    }
-    return this.httpClient.post<any>(this.loginURL, this.loginUsers);
-  }
+
+
+  // loginUser(email:string, password:string){
+  //   this.loginUsers = {
+  //     email: email,
+  //     password: password
+  //   }
+  //   this.isLoggedIn = true;
+  //   return this.httpClient.post<any>(this.baseUsersURL + 'login', this.loginUsers);
+
+  // }
 
   register(username:string,firstName:string,lastName:string,password:string, confirmPassword:string,email:string ){
     this.registerUser = {
@@ -45,7 +48,7 @@ export class UserService {
       email: email,
 
     }
-    return this.httpClient.post<any>(this.registerURL, this.registerUser);
+    return this.httpClient.post<any>(this.baseUsersURL + 'register', this.registerUser);
   }
 
 
@@ -58,9 +61,12 @@ export class UserService {
  //     }
  // }
 
-  logout(): void {
-      this.user = undefined;
-  }
+  // logout(): void {
+  //     this.user = undefined;
+  //     sessionStorage.clear;
+  //     this.isLoggedIn = false;
+  // }
+
   editProfile(phoneNumber:string,firstName:string,lastName:string,email:string){
     this.editUser = {
         phoneNumber: phoneNumber,
@@ -68,9 +74,13 @@ export class UserService {
         lastName: lastName,
         email: email
     }
-    return this.httpClient.put<any>(this.editUserURL, this.editUser);
-
+    return this.httpClient.put<any>(this.baseUsersURL + 'edit', this.editUser);
 
 }
+
+// forgottenPassword(email:string){
+
+//   return this.httpClient.put<any>(this.baseUsersURL + 'forgottenPassword', email)
+// }
 
 }

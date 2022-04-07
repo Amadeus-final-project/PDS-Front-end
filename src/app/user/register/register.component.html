@@ -6,7 +6,7 @@
               name="username" [(ngModel)]="model2.username"
                 #username="ngModel" required />
             <div *ngIf="f.submitted
-              && !username.valid">Username is required</div>
+              && !model2.username.valid">Username is required</div>
         </div>
 
         
@@ -16,7 +16,7 @@
               name="firstName" [(ngModel)]="model2.firstName"
                 #firstName="ngModel" required />
             <div *ngIf="f.submitted
-              && !firstName.valid">First name is required</div>
+              && !model2.firstName.valid">First name is required</div>
         </div>
 
         <div [ngClass]="{ 'has-error': f.submitted && !model2.lastName.valid }">  
@@ -37,7 +37,7 @@
               name="password" [(ngModel)]="model2.password"
                 #password="ngModel" required />
             <div *ngIf="f.submitted
-              && !password.valid">Password is required</div>
+              && !model2.password.valid">Password is required</div>
         </div>
 
         <div [ngClass]="{ 'has-error': f.submitted && !model2.confirmPassword.valid }"> 

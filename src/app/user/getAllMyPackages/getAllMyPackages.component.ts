@@ -1,0 +1,51 @@
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from '@angular/router';
+
+
+interface PackageModel {
+    id:number;
+    isFragile:boolean
+}
+
+
+@Component({
+    selector: 'getAllPackages',
+    templateUrl: './getAllMyPackages.component.html',
+    styleUrls: ['./getAllMyPackages.component.css']
+  })
+
+  export class GetAllMyPackagesComponent implements OnInit {
+
+
+    myPackages: PackageModel[]= [];
+
+    constructor  (
+        private http: HttpClient
+    ) {    }
+
+
+    ngOnInit(): void {
+        let url = 'http://localhost:9000/package/getAllMyPackages';
+        let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
+          if (response) {
+              this.myPackages = response;
+          } else {
+              alert("Something went wrong.")
+          }
+      });
+    }
+
+    // getAllMyPackages() {
+    //     let url = 'http://localhost:9000/package/getAllMyPackages';
+    //     let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
+    //       if (response) {
+    //           this.myPackages = response;
+    //       } else {
+    //           alert("Something went wrong.")
+    //       }
+    //   });
+    //   }
+
+    
+  }

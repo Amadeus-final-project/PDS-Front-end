@@ -5,19 +5,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 
 
-class LoginResponse {
-  token?: string;
-}
 
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'forgottenPassword',
+  templateUrl: './forgottenPassword.component.html',
+  styleUrls: ['./forgottenPassword.component.css']
 })
-export class LoginComponent implements OnInit {
+export class ForgottenPasswordComponent implements OnInit {
 
-  model: any = {};
+    email: string = '';
+    authService: any;
 
   constructor(
     private userService: UserService,
@@ -32,19 +30,20 @@ export class LoginComponent implements OnInit {
 
 
 
-login() {
-  let url = 'http://localhost:9000/login';
-  let result = this.http.post<LoginResponse>(url, {
-    username: this.model.username,
-    password: this.model.password
+forgottenPassword() {
+  let url = 'http://localhost:9000/users/forgottenPassword';
+  let result = this.http.put<any>(url, {
+    email: this.email,
 }).subscribe((response) => {
     if (response) {
+   //  this.authService.forgottenPassword(this.email)
         sessionStorage.setItem(
-          "token", response.token || "");
-          this.userService.isLoggedIn = true;
+         'token',
+         btoa(this.email)
+       );
 	this.router.navigate(['']);
     } else {
-        alert("Authentication failed.")
+        alert("Password request failed.")
     }
 });
 }

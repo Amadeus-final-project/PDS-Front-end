@@ -6,6 +6,8 @@ import { UserRoutingModule } from './user-routing.module';
 import { AppModule } from '../app.module';
 import {ProfileComponent} from "./profile/profile.component";
 import {FormsModule} from "@angular/forms";
+import { ForgottenPasswordComponent } from './forgottenPassword/forgottenPassword.component';
+import { GetAllMyPackagesComponent } from './getAllMyPackages/getAllMyPackages.component';
 
 
 
@@ -13,7 +15,9 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ForgottenPasswordComponent,
+    GetAllMyPackagesComponent
   ],
   imports: [
     CommonModule,

@@ -10,8 +10,16 @@ import {Observable} from "rxjs";
   styleUrls: ['./profile.component.css']
 })
 
+// //interface PackageModel {
+//   id:number;
+//   isFragile:boolean
+// }
+
+
+
 export class ProfileComponent implements OnInit {
-  model:any = {};
+
+  model:any;
 
   constructor(
     private userService: UserService,
@@ -21,17 +29,35 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  }
-  editProfile():void{
+
     let url = "http://localhost:9000/users/edit";
-    let result =  this.http.put<Observable<boolean>>(url, {
+    //         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
+    let result =  this.http.put<any>(url, {
       phoneNumber:this.model.phoneNumber,
       firstName: this.model.firstName,
       lastName: this.model.lastName,
       email: this.model.email
-    },{withCredentials :true})
-      .subscribe((isValid) => {
-        if (isValid) {
+    })
+      .subscribe((response) => {
+        if (response) {
+          sessionStorage.setItem('token', btoa(this.model.phoneNumber + ':'+this.model.firstName+':'+ this.model.lastName+':'+ this.model.email));
+          this.router.navigate(['']);
+        }else {
+          alert("Edit profile failed");
+        }
+      })
+  }
+  editProfile():void{
+    let url = "http://localhost:9000/users/edit";
+    //         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
+    let result =  this.http.put<any>(url, {
+      phoneNumber:this.model.phoneNumber,
+      firstName: this.model.firstName,
+      lastName: this.model.lastName,
+      email: this.model.email
+    })
+      .subscribe((response) => {
+        if (response) {
           sessionStorage.setItem('token', btoa(this.model.phoneNumber + ':'+this.model.firstName+':'+ this.model.lastName+':'+ this.model.email));
           this.router.navigate(['']);
         }else {
