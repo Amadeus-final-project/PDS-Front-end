@@ -7,15 +7,17 @@ import {ProfileComponent} from "./user/profile/profile.component";
 import { ForgottenPasswordComponent } from './user/forgottenPassword/forgottenPassword.component';
 import { GetAllMyPackagesComponent } from './user/getAllMyPackages/getAllMyPackages.component';
 import { Authentication } from './interceptors/authenticator';
+import { SendComponent } from './package/send/send.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', redirectTo: '/login'},
-  {path: 'register', component: RegisterComponent, canActivate:[Authentication]},
-  {path: 'profile', component: ProfileComponent, canActivate:[Authentication]},
-  {path: 'getAllMyPackages', component: GetAllMyPackagesComponent, canActivate:[Authentication]},
+  {path: 'register', component: RegisterComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'getAllMyPackages', component: GetAllMyPackagesComponent},
   {path: 'forgottenPassword', component: ForgottenPasswordComponent},
+  {path: 'send', component: SendComponent},
 
   {path: '**', redirectTo: ''},
 

@@ -1,39 +1,39 @@
 <div class ="container">
   <form name="profile-form" (ngSubmit)="f.form.valid && editProfile()" #f="ngForm" novalidate>
-    <div [ngClass]="{ 'has-error': f.submitted && !phoneNumber.valid }">
+    <div [ngClass]="{ 'has-error': f.submitted}">
       <label for="phoneNumber">Phone Number</label>
       <input type="number"
-             name="username" [(ngModel)]="model.username"
+             name="phoneNumber" [(ngModel)]="editProfileModel.phoneNumber"
              #phoneNumber="ngModel" required />
       <div *ngIf="f.submitted
-              && !phoneNumber.valid">Username is required</div>
+              ">Phone number is required</div>
     </div>
 
 
-    <div [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
+    <div [ngClass]="{ 'has-error': f.submitted }">
       <label for="firstName">First name</label>
       <input type="text"
-             name="firstName" [(ngModel)]="model.firstName"
+             name="firstName" [(ngModel)]="editProfileModel.firstName"
              #firstName="ngModel" required />
       <div *ngIf="f.submitted
-              && !firstName.valid">First name is required</div>
+              ">First name is required</div>
     </div>
 
-    <div [ngClass]="{ 'has-error': f.submitted && !model.lastName.valid }">
+    <div [ngClass]="{ 'has-error': f.submitted}">
       <label for="lastName">Last name</label>
       <input type="text"
-             name="lastName" [(ngModel)]="model.lastName"
-             #firstName="ngModel" required />
+             name="lastName" [(ngModel)]="editProfileModel.lastName"
+             #lastName="ngModel" required />
       <div *ngIf="f.submitted
-              && !model.lastName.valid">Last name is required</div>
+              ">Last name is required</div>
     </div>
-    <div [ngClass]="{ 'has-error': f.submitted && !model.email.valid }">
+    <div [ngClass]="{ 'has-error': f.submitted }">
       <label for="email">Email</label>
       <input type="email"
-             name="email" [(ngModel)]="model.email"
+             name="email" [(ngModel)]="editProfileModel.email"
              #password="ngModel" required />
       <div *ngIf="f.submitted
-              && !model.email.valid">Please enter valid email</div>
+              ">Please enter valid email</div>
     </div>
 
 

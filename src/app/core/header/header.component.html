@@ -1,24 +1,30 @@
+<div class="container">
+
 
 <ul>
     <li>
-        <a routerLink ="/home">Home</a>
+        <a routerLink ="/home" class="main-menu">Home</a>
     </li>
     <li>
-        <a routerLink ="/login">Login</a>
+        <a routerLink ="/login" class="main-menu">Login</a>
     </li>
     <li *ngIf ="!isLogged">
-        <a routerLink ="/register">Register</a>
+        <a routerLink ="/register" class="main-menu">Register</a>
     </li>
     <li>
-        <a routerLink ="/forgottenPassword">ForgottenPassword</a>
+        <a routerLink ="/forgottenPassword" class="main-menu">ForgottenPassword</a>
     </li>
     <li>
-        <a routerLink ="/getAllMyPackages">My Packages</a>
+        <a routerLink ="/getAllMyPackages" class="main-menu">My Packages</a>
     </li>
     <li>
-        <a routerLink ="/profile">Edit profile</a>
+        <a routerLink ="/profile" class="main-menu">Edit profile</a>
     </li>
     <li>
-        <a routerLink ="/logout" (click)="logout()">Logout</a>
+        <a routerLink ="/send" class="main-menu">Send Package</a>
+    </li>
+    <li>
+        <a routerLink ="/logout" (click)="logout()" class="main-menu">Logout</a>
     </li>
 </ul>
+</div>

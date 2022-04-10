@@ -1,0 +1,99 @@
+<div class="container">
+    <form class="send" (ngSubmit)="packageForm.form.valid && send()" #packageForm="ngForm" novalidate>
+
+
+        <!-- recipient email -->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="email">Recipient Email</label>
+            <input type="text" name="email" [(ngModel)]="sendPackage.recipient" #email="ngModel" required />
+        </div>
+
+        <!-- deliveryFrom office -->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="deliveryOffice">Delivery From</label>
+            <input type="text" name="deliveryOffice" [(ngModel)]="sendPackage.deliveryOffice" #deliveryType="ngModel"
+                required />
+        </div>
+
+        <!-- deliveryTo office -->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="deliveryToOffice">Delivery To</label>
+            <input type="text" name="deliveryToOffice" [(ngModel)]="sendPackage.deliveryToOffice"
+                #deliveryType="ngModel" required />
+        </div>
+
+
+
+        <!-- delivery type radio -->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="deliveryType">Delivery Type</label>
+             <input type="radio" id="express" name="delivery" value="1" name="deliveryType"
+                [(ngModel)]="sendPackage.deliveryType" #deliveryType="ngModel" required>
+              <label for="express">Express</label>
+              <input type="radio" id="economy" name="delivery" value="2" name="deliveryType"
+                [(ngModel)]="sendPackage.deliveryType" #deliveryType="ngModel" required>
+            <input type="hidden" name="deliveryType" value="2" />
+              <label for="economy">Economy</label><br>
+        </div>
+
+
+        <!-- isSigned-->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="isSigned">Signed</label>
+            <input type="checkbox" name="isSigned" [(ngModel)]="sendPackage.isSigned" #isSigned="ngModel" required />
+            <input type="hidden" name="isFragile" value="false" />
+        </div>
+
+
+        <!-- isFragile-->
+
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="isFragile">Fragile</label>
+            <input type="checkbox" name="isFragile" [(ngModel)]="sendPackage.isFragile" #isFragile="ngModel" required />
+            <input type="hidden" name="isFragile" value="false" />
+        </div>
+
+        <!--description-->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="description">Description</label>
+            <input type="text" name="description" [(ngModel)]="sendPackage.description" #description="ngModel"
+                required />
+
+        </div>
+
+        <!--weight-->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="weight">Weight</label>
+            <input type="number" name="weight" [(ngModel)]="sendPackage.weight" #weight="ngModel" required />
+
+        </div>
+
+
+        <!--height-->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="height">Weight</label>
+            <input type="number" name="height" [(ngModel)]="sendPackage.height" #height="ngModel" required />
+
+        </div>
+
+        <!--width-->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="width">Width</label>
+            <input type="number" name="width" [(ngModel)]="sendPackage.width" #width="ngModel" required />
+
+        </div>
+
+
+        <!--length-->
+        <div [ngClass]="{ 'has-error': packageForm.submitted}">
+            <label for="length">Length</label>
+            <input type="number" name="length" [(ngModel)]="sendPackage.length" #length="ngModel" required />
+
+        </div>
+
+        <div *ngIf="packageForm.submitted">your package has been sent </div>
+        <div>
+            <button>Send package</button>
+        </div>
+    </form>
+</div>

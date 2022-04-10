@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 
 
-
+export interface forgottenPassword {
+  email: string
+}
 
 @Component({
   selector: 'forgottenPassword',
@@ -14,8 +16,9 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ForgottenPasswordComponent implements OnInit {
 
-    email: string = '';
-    authService: any;
+  forgottenModel: forgottenPassword = {
+    email: ''
+  };
 
   constructor(
     private userService: UserService,
@@ -24,24 +27,33 @@ export class ForgottenPasswordComponent implements OnInit {
     private http: HttpClient) {   }
 
 
-  ngOnInit() {
-    sessionStorage.setItem('token', '');
-}
+  ngOnInit() {}
 
+// editProfile():void{
+//   let url = "http://localhost:9000/users/edit";
 
+//   let result =  this.http.put<EditUser>(url, this.editProfileModel)
+//     .subscribe((data:any) => {
 
-forgottenPassword() {
+// this.editProfileModel.email = data.email
+
+      
+//       if (data) {
+//         this.router.navigate(['/']);
+//       }else {
+//         alert("Edit profile failed");
+//       }
+//     })
+// }
+
+forgottenPassword(): void {
   let url = 'http://localhost:9000/users/forgottenPassword';
-  let result = this.http.put<any>(url, {
-    email: this.email,
-}).subscribe((response) => {
-    if (response) {
-   //  this.authService.forgottenPassword(this.email)
-        sessionStorage.setItem(
-         'token',
-         btoa(this.email)
-       );
-	this.router.navigate(['']);
+  let result = this.http.put<string>(url, 
+    this.forgottenModel.email,
+).subscribe((data:any) => {
+  this.forgottenModel.email = data.email
+    if (data) {
+      alert("New password sent to email.")
     } else {
         alert("Password request failed.")
     }

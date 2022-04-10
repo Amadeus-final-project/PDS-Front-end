@@ -38,18 +38,18 @@ export class UserService {
 
   // }
 
-  register(username:string,firstName:string,lastName:string,password:string, confirmPassword:string,email:string ){
-    this.registerUser = {
-      username: username,
-      firstName: firstName,
-      lastName: lastName,
-      password: password,
-      confirmPassword: confirmPassword,
-      email: email,
+  // register(username:string,firstName:string,lastName:string,password:string, confirmPassword:string,email:string ){
+  //   this.registerUser = {
+  //     username: username,
+  //     firstName: firstName,
+  //     lastName: lastName,
+  //     password: password,
+  //     confirmPassword: confirmPassword,
+  //     email: email,
 
-    }
-    return this.httpClient.post<any>(this.baseUsersURL + 'register', this.registerUser);
-  }
+  //   }
+  //   return this.httpClient.post<any>(this.baseUsersURL + 'register', this.registerUser);
+  // }
 
 
 
@@ -67,16 +67,16 @@ export class UserService {
   //     this.isLoggedIn = false;
   // }
 
-  editProfile(phoneNumber:string,firstName:string,lastName:string,email:string){
-    this.editUser = {
-        phoneNumber: phoneNumber,
-        firstName: firstName,
-        lastName: lastName,
-        email: email
-    }
-    return this.httpClient.put<any>(this.baseUsersURL + 'edit', this.editUser);
+//   editProfile(phoneNumber:string,firstName:string,lastName:string,email:string){
+//     this.editUser = {
+//         phoneNumber: phoneNumber,
+//         firstName: firstName,
+//         lastName: lastName,
+//         email: email
+//     }
+//     return this.httpClient.put<any>(this.baseUsersURL + 'edit', this.editUser);
 
-}
+// }
 
 // forgottenPassword(email:string){
 

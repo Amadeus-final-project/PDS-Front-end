@@ -39,10 +39,12 @@ login() {
     password: this.model.password
 }).subscribe((response) => {
     if (response) {
+      
         sessionStorage.setItem(
           "token", response.token || "");
           this.userService.isLoggedIn = true;
-	this.router.navigate(['']);
+          
+	this.router.navigate(['/home']);
     } else {
         alert("Authentication failed.")
     }

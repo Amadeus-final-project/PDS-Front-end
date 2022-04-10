@@ -10,7 +10,7 @@ interface PackageModel {
 
 
 @Component({
-    selector: 'getAllPackages',
+    selector: 'app-getAllMyPackages',
     templateUrl: './getAllMyPackages.component.html',
     styleUrls: ['./getAllMyPackages.component.css']
   })
@@ -36,16 +36,16 @@ interface PackageModel {
       });
     }
 
-    // getAllMyPackages() {
-    //     let url = 'http://localhost:9000/package/getAllMyPackages';
-    //     let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-    //       if (response) {
-    //           this.myPackages = response;
-    //       } else {
-    //           alert("Something went wrong.")
-    //       }
-    //   });
-    //   }
+//     getAllMyPackages() {
+//         let url = 'http://localhost:9000/package/getAllMyPackages';
+//         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
+//           if (response) {
+//               this.myPackages = response;
+//           } else {
+//               alert("Something went wrong.")
+//           }
+//       });
+//       }
 
     
-  }
+ }

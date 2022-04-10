@@ -4,22 +4,38 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
+
+export interface EditUser {
+  phoneNumber: number;
+  firstName: string,
+  lastName: string,
+  email: string
+}
+
 @Component({
   selector: 'profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 
-// //interface PackageModel {
-//   id:number;
-//   isFragile:boolean
-// }
-
-
-
 export class ProfileComponent implements OnInit {
 
-  model:any;
+  // model: object | undefined {
+  //   phoneNumber:number,
+  //   firstName: this.model.firstName,
+  //   lastName: this.model.lastName,
+  //   email: this.model.email
+
+  // }
+
+  editProfileModel: EditUser = {
+
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: 0
+  };
+
 
   constructor(
     private userService: UserService,
@@ -30,36 +46,19 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let url = "http://localhost:9000/users/edit";
-    //         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-    let result =  this.http.put<any>(url, {
-      phoneNumber:this.model.phoneNumber,
-      firstName: this.model.firstName,
-      lastName: this.model.lastName,
-      email: this.model.email
-    })
-      .subscribe((response) => {
-        if (response) {
-          sessionStorage.setItem('token', btoa(this.model.phoneNumber + ':'+this.model.firstName+':'+ this.model.lastName+':'+ this.model.email));
-          this.router.navigate(['']);
-        }else {
-          alert("Edit profile failed");
-        }
-      })
   }
   editProfile():void{
     let url = "http://localhost:9000/users/edit";
-    //         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-    let result =  this.http.put<any>(url, {
-      phoneNumber:this.model.phoneNumber,
-      firstName: this.model.firstName,
-      lastName: this.model.lastName,
-      email: this.model.email
-    })
-      .subscribe((response) => {
-        if (response) {
-          sessionStorage.setItem('token', btoa(this.model.phoneNumber + ':'+this.model.firstName+':'+ this.model.lastName+':'+ this.model.email));
-          this.router.navigate(['']);
+    console.log(this.editProfileModel);
+    let result =  this.http.put<EditUser>(url, this.editProfileModel)
+      .subscribe((data:any) => {
+this.editProfileModel.firstName = data.firstName
+this.editProfileModel.lastName = data.lastName
+this.editProfileModel.email = data.email
+this.editProfileModel.phoneNumber = data.phoneNumber
+        
+        if (data) {
+          this.router.navigate(['/']);
         }else {
           alert("Edit profile failed");
         }
@@ -67,3 +66,17 @@ export class ProfileComponent implements OnInit {
   }
 
 }
+
+
+// signIn(provider) {
+//   this._auth.login(provider).subscribe(
+//     (data:any) => {
+//       console.log(data);
+//       this.hideForm = false;
+
+//       this.emaill = data.email;
+//       this.nom = data.last_name;
+//       this.prenom = data.first_name;
+//       this.profileImage = data.image;
+//   })
+// }

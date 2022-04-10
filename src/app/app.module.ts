@@ -14,6 +14,7 @@ import { ForgottenPasswordComponent } from './user/forgottenPassword/forgottenPa
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { GetAllMyPackagesComponent} from './user/getAllMyPackages/getAllMyPackages.component';
 import { Authentication } from './interceptors/authenticator';
+import { SendComponent } from './package/send/send.component';
 //import { UserModule } from './user/user.module';
 
 
@@ -26,7 +27,8 @@ import { Authentication } from './interceptors/authenticator';
     RegisterComponent,
     ProfileComponent,
     ForgottenPasswordComponent,
-    GetAllMyPackagesComponent
+    GetAllMyPackagesComponent,
+    SendComponent
   ],
   imports: [
     BrowserModule,

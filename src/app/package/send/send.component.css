@@ -1,16 +1,16 @@
 
-form.forgottenPassword{
+form.package {
     width: 40%;
     text-align: center;
 }
 
 
-.login input, .register input {
+.package input {
     flex: 0 1 100%;
     border: 1px solid;
 }
 
-.login button, .register button {
+.package {
     color: darkblue;
     border: none;
     width: 60%;
@@ -18,7 +18,7 @@ form.forgottenPassword{
 }
 
 
-.login .field, .register .field {
+.package .field{
     display: flex;
     padding-bottom: 0;
 }
