@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="add-driver" (ngSubmit)="addDriverForm.valid && addDriver()" #addDriverForm="ngForm" novalidate>
+
+
+    <!--email-->
+    <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
+      <label for="email">Email</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewDriver.email" #capacity="ngModel" required />
+    </div>
+
+    <!--firstName-->
+    <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
+      <label for="firstName">First Name</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewDriver.firstName" #capacity="ngModel" required />
+    </div>
+
+    <!--lastName-->
+    <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
+      <label for="lastName">Last Name</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewDriver.lastName" #capacity="ngModel" required />
+    </div>
+
+    <!--password-->
+    <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
+      <label for="password">Password</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewDriver.password" #capacity="ngModel" required />
+    </div>
+
+    <!--phoneNumber-->
+    <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="string" name="fuelType" [(ngModel)]="addNewDriver.phoneNumber" #fuelType="ngModel" required />
+
+    </div>
+    <!--Remaining Paid leave-->
+    <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
+      <label for="paidLeave">Paid Leave</label>
+      <input type="string" name="fuelType" [(ngModel)]="addNewDriver.remainingPaidLeave" #fuelType="ngModel" required />
+
+    </div>
+
+
+
+    <div *ngIf="addDriverForm.submitted">Driver added!</div>
+    <div>
+      <button>Add Driver</button>
+    </div>
+  </form>
+</div>

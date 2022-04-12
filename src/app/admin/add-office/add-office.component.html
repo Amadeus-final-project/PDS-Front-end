@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="add-office" (ngSubmit)="addOfficeForm.valid && addOffice()" #addOfficeForm="ngForm" novalidate>
+
+
+    <!--city-->
+    <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
+      <label for="city">City</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewOffice.city" #capacity="ngModel" required />
+    </div>
+
+    <!--country-->
+    <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
+      <label for="country">country</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewOffice.country" #capacity="ngModel" required />
+    </div>
+
+    <!--name-->
+    <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
+      <label for="name">Name</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewOffice.name" #capacity="ngModel" required />
+    </div>
+
+    <!--postcode-->
+    <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
+      <label for="postcode">postcode</label>
+      <input type="number" name="capacity" [(ngModel)]="addNewOffice.postcode" #capacity="ngModel" required />
+    </div>
+
+    <!--street-->
+    <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
+      <label for="street">street</label>
+      <input type="string" name="fuelType" [(ngModel)]="addNewOffice.street" #fuelType="ngModel" required />
+
+    </div>
+    <!--region-->
+    <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
+      <label for="region">region</label>
+      <input type="string" name="fuelType" [(ngModel)]="addNewOffice.region" #fuelType="ngModel" required />
+
+    </div>
+
+
+
+    <div *ngIf="addOfficeForm.submitted">Office added!</div>
+    <div>
+      <button>Add Office</button>
+    </div>
+  </form>
+</div>
