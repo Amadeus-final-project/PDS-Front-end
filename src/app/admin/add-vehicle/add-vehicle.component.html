@@ -1,0 +1,45 @@
+<div class="container">
+    <form class="add-vehicle" (ngSubmit)="addVehicleForm.valid && addVehicle()" #addVehicleForm="ngForm" novalidate>
+
+
+        <!--capacity-->
+        <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
+            <label for="capacity">Capacity</label>
+            <input type="number" name="capacity" [(ngModel)]="addNewVehicle.capacity" #capacity="ngModel" required />
+        </div>
+
+        <!--range-->
+        <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
+            <label for="range">Range</label>
+            <input type="string" name="range" [(ngModel)]="addNewVehicle.range" #range="ngModel" required />
+
+        </div>
+
+        <!--brand-->
+        <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
+            <label for="brand">Brand</label>
+            <input type="string" name="brand" [(ngModel)]="addNewVehicle.brand" #brand="ngModel" required />
+
+        </div>
+
+        <!--year-->
+        <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
+            <label for="year">Year</label>
+            <input type="number" name="year" [(ngModel)]="addNewVehicle.year" #year="ngModel" required />
+        </div>
+
+        <!--fuel type-->
+        <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
+            <label for="fuelType">Brand</label>
+            <input type="string" name="fuelType" [(ngModel)]="addNewVehicle.fuelType" #fuelType="ngModel" required />
+
+        </div>
+
+
+
+        <div *ngIf="addVehicleForm.submitted">Vehicle added!</div>
+        <div>
+            <button>Add vehicle</button>
+        </div>
+    </form>
+</div>
