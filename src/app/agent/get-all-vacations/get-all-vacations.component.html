@@ -1,0 +1,10 @@
+<p>getAllVacations works!</p>
+<div class="vacations">
+    <div class="vacation" *ngFor= "let v of allVacations">
+        <p>Start date: {{v.startDate}}</p>
+        <p>End date: {{v.endDate}}</p>
+        <p>Description: {{v.description}}</p>
+        <p>Approved: {{v.isApproved}}</p>
+        <p>--------------------</p>
+    </div>
+</div>
