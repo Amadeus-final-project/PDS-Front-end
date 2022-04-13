@@ -15,7 +15,12 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { GetAllMyPackagesComponent} from './user/getAllMyPackages/getAllMyPackages.component';
 import { Authentication } from './interceptors/authenticator';
 import { SendComponent } from './package/send/send.component';
-//import { UserModule } from './user/user.module';
+import { GetAllDriversComponent } from './driver/getAllDrivers/getAllDrivers.component';
+import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
+import { AddVehicleComponent } from './admin/add-vehicle/add-vehicle.component';
+import { AddDriverComponent } from './admin/add-driver/add-driver.component';
+import { AddOfficeComponent } from './admin/add-office/add-office.component';
+import { AddAgentComponent } from './admin/add-agent/add-agent.component';
 
 
 
@@ -28,14 +33,19 @@ import { SendComponent } from './package/send/send.component';
     ProfileComponent,
     ForgottenPasswordComponent,
     GetAllMyPackagesComponent,
-    SendComponent
+    SendComponent,
+    GetAllDriversComponent,
+    GetAllVacationsComponent,
+    AddVehicleComponent,
+    AddDriverComponent,
+    AddOfficeComponent,
+    AddAgentComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     CoreModule,
-    //UserModule,
     FormsModule,
 
   ],

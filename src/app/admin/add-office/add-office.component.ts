@@ -13,12 +13,12 @@ export class AddOfficeComponent implements OnInit {
 
 
   addNewOffice:AddOfficeModel = {
-  "city": "string",
-  "country": "string",
-  "name": "string",
-  "postcode": "string",
-  "region": "string",
-  "street": "string"
+  city: '',
+  country: '',
+  name: '',
+  postcode: '',
+  region: '',
+  street: ''
   }
 
   constructor(    private router: Router,

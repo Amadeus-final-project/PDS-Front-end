@@ -2,6 +2,7 @@ export class Package {
 }
 
 export interface PackageModel {
+    id:number;
     recipient:string;
     deliveryOffice:string;
     deliveryToOffice:string;
@@ -14,3 +15,4 @@ export interface PackageModel {
     length: number;
     description:string;
 }
+

@@ -11,14 +11,14 @@
         <!--range-->
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="range">Range</label>
-            <input type="string" name="range" [(ngModel)]="addNewVehicle.range" #range="ngModel" required />
+            <input type="text" name="range" [(ngModel)]="addNewVehicle.range" #range="ngModel" required />
 
         </div>
 
         <!--brand-->
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="brand">Brand</label>
-            <input type="string" name="brand" [(ngModel)]="addNewVehicle.brand" #brand="ngModel" required />
+            <input type="text" name="brand" [(ngModel)]="addNewVehicle.brand" #brand="ngModel" required />
 
         </div>
 
@@ -31,7 +31,7 @@
         <!--fuel type-->
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="fuelType">Fuel Type</label>
-            <input type="string" name="fuelType" [(ngModel)]="addNewVehicle.fuelType" #fuelType="ngModel" required />
+            <input type="text" name="fuelType" [(ngModel)]="addNewVehicle.fuelType" #fuelType="ngModel" required />
 
         </div>
 

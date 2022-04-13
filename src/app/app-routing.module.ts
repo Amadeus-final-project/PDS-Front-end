@@ -8,6 +8,12 @@ import { ForgottenPasswordComponent } from './user/forgottenPassword/forgottenPa
 import { GetAllMyPackagesComponent } from './user/getAllMyPackages/getAllMyPackages.component';
 import { Authentication } from './interceptors/authenticator';
 import { SendComponent } from './package/send/send.component';
+import { GetAllDriversComponent } from './driver/getAllDrivers/getAllDrivers.component';
+import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
+import { AddVehicleComponent } from './admin/add-vehicle/add-vehicle.component';
+import { AddDriverComponent } from './admin/add-driver/add-driver.component';
+import { AddAgentComponent } from './admin/add-agent/add-agent.component';
+import { AddOfficeComponent } from './admin/add-office/add-office.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,7 +24,12 @@ const routes: Routes = [
   {path: 'getAllMyPackages', component: GetAllMyPackagesComponent},
   {path: 'forgottenPassword', component: ForgottenPasswordComponent},
   {path: 'send', component: SendComponent},
-
+  {path: `getAllDrivers`, component: GetAllDriversComponent},
+  {path: `get-all-vacations`, component: GetAllVacationsComponent},
+  {path: `add-vehicle`, component: AddVehicleComponent},
+  {path: `add-driver`, component: AddDriverComponent},
+  {path: `add-agent`, component: AddAgentComponent},
+  {path: `add-office`, component: AddOfficeComponent},
   {path: '**', redirectTo: ''},
 
 ];

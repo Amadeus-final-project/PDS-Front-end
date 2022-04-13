@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 class LoginResponse {
   token?: string;
+  role: string | undefined;
 }
 
 
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     sessionStorage.setItem('token', '');
+    sessionStorage.setItem('role', '');
 }
 
 
@@ -39,7 +41,6 @@ login() {
     password: this.model.password
 }).subscribe((response) => {
     if (response) {
-      
         sessionStorage.setItem(
           "token", response.token || "");
           this.userService.isLoggedIn = true;

@@ -13,11 +13,11 @@ export class AddAgentComponent implements OnInit {
 
 
   addNewAgent:AddAgentModel = {
-    email: "string",
-    firstName :'string',
-    lastName: 'string',
-    password: 'string',
-    phoneNumber: 'string',
+    email: '',
+    firstName :'',
+    lastName: '',
+    password: '',
+    phoneNumber: '',
     remainingPaidLeave:0,
   }
 

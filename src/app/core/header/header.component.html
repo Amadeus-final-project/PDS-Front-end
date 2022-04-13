@@ -1,30 +1,80 @@
-<div class="container">
+<!-- <div class="container">
 
 
 <ul>
-    <li>
-        <a routerLink ="/home" class="main-menu">Home</a>
+     <li>
+                  <a routerLink ="/home" class="main-menu">Home</a>
     </li>
     <li>
-        <a routerLink ="/login" class="main-menu">Login</a>
+                     <a routerLink ="/login" class="main-menu">Login</a>
     </li>
     <li *ngIf ="!isLogged">
-        <a routerLink ="/register" class="main-menu">Register</a>
+                          <a routerLink ="/register" class="main-menu">Register</a>
     </li>
     <li>
         <a routerLink ="/forgottenPassword" class="main-menu">ForgottenPassword</a>
     </li>
     <li>
-        <a routerLink ="/getAllMyPackages" class="main-menu">My Packages</a>
+                         <a routerLink ="/getAllMyPackages" class="main-menu">My Packages</a>
     </li>
     <li>
-        <a routerLink ="/profile" class="main-menu">Edit profile</a>
+                           <a routerLink ="/profile" class="main-menu">Edit profile</a>
     </li>
     <li>
-        <a routerLink ="/send" class="main-menu">Send Package</a>
+                       <a routerLink ="/send" class="main-menu">Send Package</a>
+    </li>
+    <li>
+        <a routerLink ="/getAllDrivers" class="main-menu">Get all drivers</a>
+    </li>
+    <li>
+        <a routerLink ="/get-all-vacations" class="main-menu">Get all vacations</a>
+    </li>
+    <li>
+        <a routerLink ="/add-vehicle" class="main-menu">Add Vehicle</a>
+    </li>
+    <li>
+        <a routerLink ="/add-office" class="main-menu">Add Office</a>
+    </li>
+    <li>
+        <a routerLink ="/add-driver" class="main-menu">Add Driver</a>
+    </li>
+    <li>
+        <a routerLink ="/add-agent" class="main-menu">Add Agent</a>
     </li>
     <li>
         <a routerLink ="/logout" (click)="logout()" class="main-menu">Logout</a>
     </li>
 </ul>
-</div>
+</div> -->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">PDS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/send">Send package</a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/profile">Edit profile</a>
+            <a class="dropdown-item" href="/getAllMyPackages">My Packages</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>

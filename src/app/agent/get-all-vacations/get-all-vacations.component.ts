@@ -16,7 +16,6 @@ export class GetAllVacationsComponent implements OnInit {
   ngOnInit(): void {
     let url = 'http://localhost:9000/agent/viewAllVacations';
     let result = this.http.get<VacationModel[]>(url).subscribe((response) => {
-      console.log(response);
       if (response) {
           this.allVacations = response;
       } else {

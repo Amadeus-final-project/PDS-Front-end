@@ -1,12 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from '@angular/router';
+import { PackageModel } from "src/app/package/package";
 
+// interface PackageModel {
+//     id:number;
+//     isFragile:boolean
+// }
 
-interface PackageModel {
-    id:number;
-    isFragile:boolean
-}
 
 
 @Component({

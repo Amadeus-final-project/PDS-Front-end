@@ -23,7 +23,7 @@
             <label for="lastName">Last name</label>
             <input type="text"
               name="lastName" [(ngModel)]="model2.lastName"
-                #firstName="ngModel" required />
+                #lastName="ngModel" required />
             <div *ngIf="f.submitted
               && !model2.lastName.valid">Last name is required</div>
         </div>
@@ -62,4 +62,4 @@
             <button>Register</button>
         </div>
     </form>
-</div>>
+</div>

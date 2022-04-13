@@ -13,11 +13,11 @@ export class AddDriverComponent implements OnInit {
 
 
   addNewDriver:AddDriverModel = {
-    email: "string",
-    firstName :'string',
-    lastName: 'string',
-    password: 'string',
-    phoneNumber: 'string',
+    email: '',
+    firstName :'',
+    lastName: '',
+    password: '',
+    phoneNumber: '',
     remainingPaidLeave:0,
   }
 

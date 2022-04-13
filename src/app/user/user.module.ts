@@ -17,7 +17,7 @@ import { GetAllMyPackagesComponent } from './getAllMyPackages/getAllMyPackages.c
     RegisterComponent,
     ProfileComponent,
     ForgottenPasswordComponent,
-    GetAllMyPackagesComponent
+    GetAllMyPackagesComponent,
   ],
   imports: [
     CommonModule,

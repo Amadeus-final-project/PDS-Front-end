@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 export class SendComponent implements OnInit {
 
   sendPackage:PackageModel = {
+    id: 0,
     recipient:'',
     deliveryOffice: '',
     deliveryToOffice: '',
@@ -38,11 +39,11 @@ export class SendComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
     send() {
         let url = 'http://localhost:9000/package/send';
         let result = this.http.post<PackageModel>(url, this.sendPackage).subscribe((response) => {
           if (response) {
-             console.log("i work in angular")
               this.router.navigate(['/getAllMyPackages']);
           } else {
               alert("Can't send package at this moment.")

@@ -15,7 +15,6 @@ import { SendComponent } from './send/send.component';
   imports: [
     CommonModule,
     PackageRoutingModule,
-   // AppModule,
     FormsModule,
   ]
 })
