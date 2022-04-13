@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('role', '');
 }
 
+//this.commonUrlObj.commonUrl+'/saveNewCategory'
 
-
-login() {
-  let url = 'http://localhost:9000/login';
-  let result = this.http.post<LoginResponse>(url, {
+login() { //https://localhost:9000/
+  //let url = 'this.userService.baseUsersURL/login';
+  let result = this.http.post<LoginResponse>(this.userService.baseUsersURL + '/login', {
     username: this.model.username,
     password: this.model.password
 }).subscribe((response) => {

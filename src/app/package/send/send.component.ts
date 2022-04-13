@@ -41,8 +41,8 @@ export class SendComponent implements OnInit {
 
 
     send() {
-        let url = 'http://localhost:9000/package/send';
-        let result = this.http.post<PackageModel>(url, this.sendPackage).subscribe((response) => {
+       // let url = 'http://localhost:9000/package/send';
+        let result = this.http.post<PackageModel>(this.packageService.basePackageURL + '/send', this.sendPackage).subscribe((response) => {
           if (response) {
               this.router.navigate(['/getAllMyPackages']);
           } else {

@@ -32,8 +32,8 @@ export class AddVehicleComponent implements OnInit {
 
 
   addVehicle() {
-    let url = 'http://localhost:9000/admin/addVehicle';
-    let result = this.http.post<AddVehicleModel>(url, this.addNewVehicle).subscribe((response) => {
+   // let url = 'http://localhost:9000/admin/addVehicle';
+    let result = this.http.post<AddVehicleModel>(this.adminService.baseAdminURL + '/addVehicle', this.addNewVehicle).subscribe((response) => {
       if (response) {
           this.router.navigate(['/']);
       } else {

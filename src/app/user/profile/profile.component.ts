@@ -48,9 +48,9 @@ export class ProfileComponent implements OnInit {
 
   }
   editProfile():void{
-    let url = "http://localhost:9000/users/edit";
+    //let url = "http://localhost:9000/users/edit";
     console.log(this.editProfileModel);
-    let result =  this.http.put<EditUser>(url, this.editProfileModel)
+    let result =  this.http.put<EditUser>(this.userService.baseUsersURL + '/edit', this.editProfileModel)
       .subscribe((data:any) => {
 this.editProfileModel.firstName = data.firstName
 this.editProfileModel.lastName = data.lastName

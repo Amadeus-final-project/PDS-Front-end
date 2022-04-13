@@ -6,5 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
 
+
+  public baseAdminURL ="https://pds-backend.herokuapp.com/admin";
+
+
   constructor(private httpClient: HttpClient) { }
 }

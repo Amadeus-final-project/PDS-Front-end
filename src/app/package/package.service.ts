@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 
 export class PackageService {
 
+  public basePackageURL ="https://pds-backend.herokuapp.com/package";
 
   constructor(private httpClient: HttpClient) { }
 }

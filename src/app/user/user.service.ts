@@ -15,7 +15,7 @@ export class UserService {
     return this.isLoggedIn
   }
 
-  private baseUsersURL ="http://localhost:9000/users/";
+  public baseUsersURL ="https://pds-backend.herokuapp.com/users";
 
 
   constructor(private httpClient: HttpClient) { }

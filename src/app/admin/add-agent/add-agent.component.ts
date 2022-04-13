@@ -33,8 +33,8 @@ export class AddAgentComponent implements OnInit {
 
 
   addAgent() {
-    let url = 'http://localhost:9000/admin/addAgent';
-    let result = this.http.post<AddAgentModel>(url, this.addNewAgent).subscribe((response) => {
+    //let url = 'http://localhost:9000/admin/addAgent';
+    let result = this.http.post<AddAgentModel>(this.adminService.baseAdminURL + '/addAgent', this.addNewAgent).subscribe((response) => {
       if (response) {
         this.router.navigate(['/']);
       } else {

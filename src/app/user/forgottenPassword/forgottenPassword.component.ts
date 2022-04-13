@@ -47,8 +47,8 @@ export class ForgottenPasswordComponent implements OnInit {
 // }
 
 forgottenPassword(): void {
-  let url = 'http://localhost:9000/users/forgottenPassword';
-  let result = this.http.put<string>(url, 
+  //let url = 'http://localhost:9000/users/forgottenPassword';
+  let result = this.http.put<string>(this.userService.baseUsersURL + '/forgottenPassword', 
     this.forgottenModel.email,
 ).subscribe((data:any) => {
   this.forgottenModel.email = data.email

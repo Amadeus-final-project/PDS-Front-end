@@ -5,6 +5,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AgentService {
+  
+
+  public baseAgentURL ="https://pds-backend.herokuapp.com/agent";
+
 
   constructor(private httpClient: HttpClient) { }
 }

@@ -28,8 +28,8 @@ export class RegisterComponent implements OnInit {
 
 
 register():void{
-  let url = "http://localhost:9000/users/register";
-  let result =  this.http.post<Observable<boolean>>(url, {
+  //let url = "http://localhost:9000/users/register";
+  let result =  this.http.post<Observable<boolean>>(this.userService.baseUsersURL + '/register', {
     username: this.model2.username,
     firstName: this.model2.firstName,
     lastName: this.model2.lastName,

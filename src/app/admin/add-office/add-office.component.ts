@@ -33,8 +33,8 @@ export class AddOfficeComponent implements OnInit {
 
 
   addOffice() {
-    let url = 'http://localhost:9000/admin/addOffice';
-    let result = this.http.post<AddOfficeModel>(url, this.addNewOffice).subscribe((response) => {
+    //let url = 'http://localhost:9000/admin/addOffice';
+    let result = this.http.post<AddOfficeModel>(this.adminService.baseAdminURL + '/addOffice', this.addNewOffice).subscribe((response) => {
       if (response) {
         this.router.navigate(['/']);
       } else {

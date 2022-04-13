@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DriverModel } from "../driver";
 import { ActivatedRoute, Router } from '@angular/router';
 import { PackageModel } from "src/app/package/package";
+import { DriverService } from "../driver.service";
 
 
 @Component({
@@ -12,14 +13,15 @@ import { PackageModel } from "src/app/package/package";
 })
 export class GetAllDriversComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private driverService: DriverService) { }
 
   allDrivers: DriverModel[]= [];
 
   ngOnInit(): void {
 
-    let url = 'http://localhost:9000/driver/getAllDrivers';
-    let result = this.http.get<DriverModel[]>(url).subscribe((response) => {
+   // let url = 'http://localhost:9000/driver/getAllDrivers';
+    let result = this.http.get<DriverModel[]>(this.driverService.baseDriverURL + '/getAllDrivers').subscribe((response) => {
       if (response) {
           this.allDrivers = response;
       } else {
