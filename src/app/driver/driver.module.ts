@@ -4,12 +4,14 @@ import { DriverRoutingModule } from './driver-routing.module';
 //import { AppModule } from '../app.module';
 import {FormsModule} from "@angular/forms";
 import { GetAllDriversComponent } from './getAllDrivers/getAllDrivers.component';
+import { GetVehicleComponent } from './get-vehicle/get-vehicle.component';
 
 
 
 @NgModule({
   declarations: [
       GetAllDriversComponent,
+      GetVehicleComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,14 @@
+<div class ="container">
+    <form class="disapprovePackage" (ngSubmit)="f.form.valid && disapprovePackage()" #f="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': f.submitted}">
+            <label for="number">Package Id</label>
+            <input type="number"
+              name="packageId" [(ngModel)]="packageId"
+                #email="ngModel" required />
+            <div *ngIf="f.submitted">Disapproved!</div>
+        </div>
+        <div>
+            <button>Disapprove Package</button>
+        </div>
+    </form>
+</div>

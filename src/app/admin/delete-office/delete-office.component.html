@@ -1,0 +1,14 @@
+<div class ="container">
+    <form class="deleteOffice" (ngSubmit)="f.form.valid && deleteOffice()" #f="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': f.submitted}">
+            <label for="number">Office Id</label>
+            <input type="number"
+              name="officeId" [(ngModel)]="officeId"
+                #email="ngModel" required />
+            <div *ngIf="f.submitted">Poof, gone!</div>
+        </div>
+        <div>
+            <button>Delete Office</button>
+        </div>
+    </form>
+</div>

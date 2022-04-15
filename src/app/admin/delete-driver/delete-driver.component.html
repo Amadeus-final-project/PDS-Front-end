@@ -1,0 +1,14 @@
+<div class ="container">
+    <form class="deleteDriver" (ngSubmit)="f.form.valid && deleteDriver()" #f="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': f.submitted}">
+            <label for="number">Driver Id</label>
+            <input type="number"
+              name="driverId" [(ngModel)]="driverId"
+                #email="ngModel" required />
+            <div *ngIf="f.submitted">Poof, gone!</div>
+        </div>
+        <div>
+            <button>Delete Driver</button>
+        </div>
+    </form>
+</div>

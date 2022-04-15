@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
 login() { //https://localhost:9000/
   //let url = 'this.userService.baseUsersURL/login';
-  let result = this.http.post<LoginResponse>(this.userService.baseUsersURL + '/login', {
+  let result = this.http.post<LoginResponse>('http://localhost:9000/login', {
     username: this.model.username,
     password: this.model.password
 }).subscribe((response) => {

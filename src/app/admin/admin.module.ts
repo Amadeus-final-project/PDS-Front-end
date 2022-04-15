@@ -6,6 +6,10 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AddAgentComponent } from './add-agent/add-agent.component';
 import { AddDriverComponent } from './add-driver/add-driver.component';
 import { AddOfficeComponent } from './add-office/add-office.component';
+import { DeleteVehicleComponent } from './delete-vehicle/delete-vehicle.component';
+import { DeleteDriverComponent } from './delete-driver/delete-driver.component';
+import { DeleteAgentComponent } from './delete-agent/delete-agent.component';
+import { DeleteOfficeComponent } from './delete-office/delete-office.component';
 
 
 
@@ -16,6 +20,10 @@ import { AddOfficeComponent } from './add-office/add-office.component';
     AddAgentComponent,
     AddDriverComponent,
     AddOfficeComponent,
+    DeleteVehicleComponent,
+    DeleteDriverComponent,
+    DeleteAgentComponent,
+    DeleteOfficeComponent,
   ],
   imports: [
     CommonModule,

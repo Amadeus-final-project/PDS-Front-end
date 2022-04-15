@@ -21,6 +21,13 @@ import { AddVehicleComponent } from './admin/add-vehicle/add-vehicle.component';
 import { AddDriverComponent } from './admin/add-driver/add-driver.component';
 import { AddOfficeComponent } from './admin/add-office/add-office.component';
 import { AddAgentComponent } from './admin/add-agent/add-agent.component';
+import { DeleteVehicleComponent } from './admin/delete-vehicle/delete-vehicle.component';
+import { DeleteDriverComponent } from './admin/delete-driver/delete-driver.component';
+import { DeleteAgentComponent } from './admin/delete-agent/delete-agent.component';
+import { DeleteOfficeComponent } from './admin/delete-office/delete-office.component';
+import { DisapprovePackageComponent } from './agent/disapprove-package/disapprove-package.component';
+import { ApprovePackageComponent } from './agent/approve-package/approve-package.component';
+import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component';
 
 
 
@@ -39,7 +46,14 @@ import { AddAgentComponent } from './admin/add-agent/add-agent.component';
     AddVehicleComponent,
     AddDriverComponent,
     AddOfficeComponent,
-    AddAgentComponent
+    AddAgentComponent,
+    DeleteVehicleComponent,
+    DeleteDriverComponent,
+    DeleteAgentComponent,
+    DeleteOfficeComponent,
+    DisapprovePackageComponent,
+    ApprovePackageComponent,
+    GetVehicleComponent
   ],
   imports: [
     BrowserModule,

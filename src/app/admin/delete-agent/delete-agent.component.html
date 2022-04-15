@@ -1,0 +1,14 @@
+<div class ="container">
+    <form class="deleteAgent" (ngSubmit)="deleteAgentF.form.valid && deleteAgent()" #deleteAgentF="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': deleteAgentF.submitted}">
+            <label for="number">Agent Id</label>
+            <input type="number"
+              name="agentId" [(ngModel)]="agentId"
+                #email="ngModel" required />
+            <div *ngIf="deleteAgentF.submitted">Poof, gone!</div>
+        </div>
+        <div>
+            <button>Delete Agent</button>
+        </div>
+    </form>
+</div>

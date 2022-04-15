@@ -1,0 +1,14 @@
+<div class ="container">
+    <form class="getVehicle" (ngSubmit)="f.form.valid && getVehicle()" #f="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': f.submitted}">
+            <label for="number">Vehicle Id</label>
+            <input type="number"
+              name="vehicleId" [(ngModel)]="vehicleId"
+                #email="ngModel" required />
+            <div *ngIf="f.submitted">Vehicle taken!</div>
+        </div>
+        <div>
+            <button>Get Vehicle</button>
+        </div>
+    </form>
+</div>

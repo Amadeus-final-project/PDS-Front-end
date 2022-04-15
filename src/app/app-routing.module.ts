@@ -14,6 +14,13 @@ import { AddVehicleComponent } from './admin/add-vehicle/add-vehicle.component';
 import { AddDriverComponent } from './admin/add-driver/add-driver.component';
 import { AddAgentComponent } from './admin/add-agent/add-agent.component';
 import { AddOfficeComponent } from './admin/add-office/add-office.component';
+import { DeleteVehicleComponent } from './admin/delete-vehicle/delete-vehicle.component';
+import { DeleteDriverComponent } from './admin/delete-driver/delete-driver.component';
+import { DeleteOfficeComponent } from './admin/delete-office/delete-office.component';
+import { DeleteAgentComponent } from './admin/delete-agent/delete-agent.component';
+import { DisapprovePackageComponent } from './agent/disapprove-package/disapprove-package.component';
+import { ApprovePackageComponent } from './agent/approve-package/approve-package.component';
+import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,6 +37,13 @@ const routes: Routes = [
   {path: `add-driver`, component: AddDriverComponent},
   {path: `add-agent`, component: AddAgentComponent},
   {path: `add-office`, component: AddOfficeComponent},
+  {path: `delete-vehicle`, component: DeleteVehicleComponent},
+  {path: `delete-driver`, component: DeleteDriverComponent},
+  {path: `delete-agent`, component: DeleteAgentComponent},
+  {path: `delete-office`, component: DeleteOfficeComponent},
+  {path: `disapprove-package`, component: DisapprovePackageComponent},
+  {path: `approve-package`, component: ApprovePackageComponent},
+  {path: `get-vehicle`, component: GetVehicleComponent},
   {path: '**', redirectTo: ''},
 
 ];
