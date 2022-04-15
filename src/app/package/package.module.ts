@@ -5,12 +5,14 @@ import { PackageRoutingModule } from './package-routing.module';
 import {FormsModule} from "@angular/forms";
 
 import { SendComponent } from './send/send.component';
+import { GetAllPackagesComponent } from './get-all-packages/get-all-packages.component';
 
 
 
 @NgModule({
   declarations: [
       SendComponent,
+      GetAllPackagesComponent,
   ],
   imports: [
     CommonModule,
