@@ -5,6 +5,9 @@ import { DriverRoutingModule } from './driver-routing.module';
 import {FormsModule} from "@angular/forms";
 import { GetAllDriversComponent } from './getAllDrivers/getAllDrivers.component';
 import { GetVehicleComponent } from './get-vehicle/get-vehicle.component';
+import { ReleaseVehicleComponent } from './release-vehicle/release-vehicle.component';
+import { CheckInOfficeComponent } from './check-in-office/check-in-office.component';
+import { StartWorkComponent } from './start-work/start-work.component';
 
 
 
@@ -12,6 +15,9 @@ import { GetVehicleComponent } from './get-vehicle/get-vehicle.component';
   declarations: [
       GetAllDriversComponent,
       GetVehicleComponent,
+      ReleaseVehicleComponent,
+      CheckInOfficeComponent,
+      StartWorkComponent,
   ],
   imports: [
     CommonModule,

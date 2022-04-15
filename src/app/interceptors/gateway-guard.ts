@@ -23,7 +23,6 @@ export class Gateway implements CanActivate {
               state: RouterStateSnapshot) {
     // TODO: Find a place for this
     const token = sessionStorage.getItem('token');
-
     if(token) {
       const userPayload = JSON.parse(atob(token.split('.')[1]));
       const properRoute = this.gatewayMap[userPayload.role];

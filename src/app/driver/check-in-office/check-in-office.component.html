@@ -1,0 +1,14 @@
+<div class ="container">
+    <form class="checkInOffice" (ngSubmit)="f.form.valid && checkInOffice()" #f="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': f.submitted}">
+            <label for="number">Office Id</label>
+            <input type="number"
+              name="officeId" [(ngModel)]="officeId"
+                #email="ngModel" required />
+            <div *ngIf="f.submitted">Checked!</div>
+        </div>
+        <div>
+            <button>Check-in</button>
+        </div>
+    </form>
+</div>

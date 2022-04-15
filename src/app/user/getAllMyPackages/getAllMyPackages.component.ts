@@ -28,7 +28,7 @@ import { PackageModel } from "src/app/package/package";
 
     ngOnInit(): void {
         //let url = 'http://localhost:9000/package/getAllMyPackages';
-        let url = 'https://pds-backend.herokuapp.com/package/getAllMyPackages';
+        let url = 'http://localhost:9000/package/getAllMyPackages';
         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
           if (response) {
               this.myPackages = response;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserRole, UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
@@ -44,7 +44,6 @@ login() { //https://localhost:9000/
         sessionStorage.setItem(
           "token", response.token || "");
           this.userService.isLoggedIn = true;
-
           // TODO: redirect /gateway
 	this.router.navigate(['/home']);
     } else {

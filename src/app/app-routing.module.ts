@@ -23,6 +23,10 @@ import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component'
 import {Authentication} from "./interceptors/auth-guard";
 import {Gateway} from "./interceptors/gateway-guard";
 import {PlaceholderComponent} from "./shared/placeholder/placeholder.component";
+import { ReleaseVehicleComponent } from './driver/release-vehicle/release-vehicle.component';
+import { CheckInOfficeComponent } from './driver/check-in-office/check-in-office.component';
+import { StartWorkComponent } from './driver/start-work/start-work.component';
+import { GetAllPackagesComponent } from './package/get-all-packages/get-all-packages.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -51,6 +55,12 @@ const routes: Routes = [
       {path: `disapprove-package`, component: DisapprovePackageComponent},
       {path: `approve-package`, component: ApprovePackageComponent},
       {path: `get-vehicle`, component: GetVehicleComponent},
+      {path: `release-vehicle`, component: ReleaseVehicleComponent},
+      {path: `check-in-office`, component: CheckInOfficeComponent},
+      {path: `start-work`, component: StartWorkComponent},
+      {path: `get-all-packages`, component: GetAllPackagesComponent},
+
+
     ]},
   {path: 'gateway', canActivate: [Gateway], component: PlaceholderComponent},
   {path: '**', redirectTo: ''},
