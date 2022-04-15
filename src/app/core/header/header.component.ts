@@ -16,10 +16,9 @@ export class HeaderComponent implements OnInit {
     private router: Router) { }
 
 
-
-    public get isLogged(): boolean {
-      return !!this.userService.isLoggedIn;
-    }
+  public get isLogged(): boolean {
+    return !!this.userService.isLoggedIn;
+  }
 
   logout():void{
     sessionStorage.removeItem('token');

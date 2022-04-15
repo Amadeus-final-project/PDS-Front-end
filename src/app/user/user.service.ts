@@ -12,7 +12,7 @@ export class UserService {
 
 
   public get isLogged(): boolean {
-    return this.isLoggedIn
+    return !!sessionStorage.getItem('token');
   }
     //https://pds-backend.herokuapp.com/users
   public baseUsersURL ="http://localhost:9000/users";
@@ -23,7 +23,7 @@ export class UserService {
   registerUser: RegisterUser | undefined;
   loginUsers: IUser | undefined;
   editUser: EditUser |undefined;
-  
+
   isLoggedIn:boolean = false;
 
 

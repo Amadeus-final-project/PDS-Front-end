@@ -6,7 +6,6 @@ import { RegisterComponent } from './user/register/register.component';
 import {ProfileComponent} from "./user/profile/profile.component";
 import { ForgottenPasswordComponent } from './user/forgottenPassword/forgottenPassword.component';
 import { GetAllMyPackagesComponent } from './user/getAllMyPackages/getAllMyPackages.component';
-import { Authentication } from './interceptors/authenticator';
 import { SendComponent } from './package/send/send.component';
 import { GetAllDriversComponent } from './driver/getAllDrivers/getAllDrivers.component';
 import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
@@ -21,29 +20,39 @@ import { DeleteAgentComponent } from './admin/delete-agent/delete-agent.componen
 import { DisapprovePackageComponent } from './agent/disapprove-package/disapprove-package.component';
 import { ApprovePackageComponent } from './agent/approve-package/approve-package.component';
 import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component';
+import {Authentication} from "./interceptors/auth-guard";
+import {Gateway} from "./interceptors/gateway-guard";
+import {PlaceholderComponent} from "./shared/placeholder/placeholder.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', redirectTo: '/login'},
   {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'getAllMyPackages', component: GetAllMyPackagesComponent},
-  {path: 'forgottenPassword', component: ForgottenPasswordComponent},
-  {path: 'send', component: SendComponent},
-  {path: `getAllDrivers`, component: GetAllDriversComponent},
-  {path: `get-all-vacations`, component: GetAllVacationsComponent},
-  {path: `add-vehicle`, component: AddVehicleComponent},
-  {path: `add-driver`, component: AddDriverComponent},
-  {path: `add-agent`, component: AddAgentComponent},
-  {path: `add-office`, component: AddOfficeComponent},
-  {path: `delete-vehicle`, component: DeleteVehicleComponent},
-  {path: `delete-driver`, component: DeleteDriverComponent},
-  {path: `delete-agent`, component: DeleteAgentComponent},
-  {path: `delete-office`, component: DeleteOfficeComponent},
-  {path: `disapprove-package`, component: DisapprovePackageComponent},
-  {path: `approve-package`, component: ApprovePackageComponent},
-  {path: `get-vehicle`, component: GetVehicleComponent},
+  {path: '', canActivate:[Authentication], children:[
+      {path: 'admin-home', component: HomeComponent},
+      {path: 'driver-home', component: HomeComponent},
+      {path: 'agent-home', component: HomeComponent},
+      {path: 'customer-home', component: HomeComponent},
+      {path: 'profile', component: ProfileComponent},
+      {path: 'getAllMyPackages', component: GetAllMyPackagesComponent},
+      {path: 'forgottenPassword', component: ForgottenPasswordComponent},
+      {path: 'send', component: SendComponent},
+      {path: `getAllDrivers`, component: GetAllDriversComponent},
+      {path: `get-all-vacations`, component: GetAllVacationsComponent},
+      {path: `add-vehicle`, component: AddVehicleComponent},
+      {path: `add-driver`, component: AddDriverComponent},
+      {path: `add-agent`, component: AddAgentComponent},
+      {path: `add-office`, component: AddOfficeComponent},
+      {path: `delete-vehicle`, component: DeleteVehicleComponent},
+      {path: `delete-driver`, component: DeleteDriverComponent},
+      {path: `delete-agent`, component: DeleteAgentComponent},
+      {path: `delete-office`, component: DeleteOfficeComponent},
+      {path: `disapprove-package`, component: DisapprovePackageComponent},
+      {path: `approve-package`, component: ApprovePackageComponent},
+      {path: `get-vehicle`, component: GetVehicleComponent},
+    ]},
+  {path: 'gateway', canActivate: [Gateway], component: PlaceholderComponent},
   {path: '**', redirectTo: ''},
 
 ];

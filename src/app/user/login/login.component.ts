@@ -44,11 +44,12 @@ login() { //https://localhost:9000/
         sessionStorage.setItem(
           "token", response.token || "");
           this.userService.isLoggedIn = true;
-          
+
+          // TODO: redirect /gateway
 	this.router.navigate(['/home']);
     } else {
         alert("Authentication failed.")
     }
-});
+}, (error => alert(error)));
 }
 }

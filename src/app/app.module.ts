@@ -13,7 +13,7 @@ import {ProfileComponent} from "./user/profile/profile.component";
 import { ForgottenPasswordComponent } from './user/forgottenPassword/forgottenPassword.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { GetAllMyPackagesComponent} from './user/getAllMyPackages/getAllMyPackages.component';
-import { Authentication } from './interceptors/authenticator';
+import { Authentication } from './interceptors/auth-guard';
 import { SendComponent } from './package/send/send.component';
 import { GetAllDriversComponent } from './driver/getAllDrivers/getAllDrivers.component';
 import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
@@ -28,6 +28,8 @@ import { DeleteOfficeComponent } from './admin/delete-office/delete-office.compo
 import { DisapprovePackageComponent } from './agent/disapprove-package/disapprove-package.component';
 import { ApprovePackageComponent } from './agent/approve-package/approve-package.component';
 import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component';
+import {Gateway} from "./interceptors/gateway-guard";
+import {SharedModule} from "./shared/shared.module";
 
 
 
@@ -61,9 +63,12 @@ import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component'
     AppRoutingModule,
     CoreModule,
     FormsModule,
-
+    SharedModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, [Authentication]],
+  providers: [
+    Authentication,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
