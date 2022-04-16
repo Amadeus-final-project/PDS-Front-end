@@ -1,0 +1,44 @@
+<div class ="container">
+  <form name="profile-form" (ngSubmit)="f.form.valid && editProfile()" #f="ngForm" novalidate>
+    <div [ngClass]="{ 'has-error': f.submitted}">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="number"
+             name="phoneNumber" [(ngModel)]="editProfileModel.phoneNumber"
+             #phoneNumber="ngModel" required />
+      <div *ngIf="f.submitted
+              ">Phone number is required</div>
+    </div>
+
+
+    <div [ngClass]="{ 'has-error': f.submitted }">
+      <label for="firstName">First name</label>
+      <input type="text"
+             name="firstName" [(ngModel)]="editProfileModel.firstName"
+             #firstName="ngModel" required />
+      <div *ngIf="f.submitted
+              ">First name is required</div>
+    </div>
+
+    <div [ngClass]="{ 'has-error': f.submitted}">
+      <label for="lastName">Last name</label>
+      <input type="text"
+             name="lastName" [(ngModel)]="editProfileModel.lastName"
+             #lastName="ngModel" required />
+      <div *ngIf="f.submitted
+              ">Last name is required</div>
+    </div>
+    <div [ngClass]="{ 'has-error': f.submitted }">
+      <label for="email">Email</label>
+      <input type="email"
+             name="email" [(ngModel)]="editProfileModel.email"
+             #password="ngModel" required />
+      <div *ngIf="f.submitted
+              ">Please enter valid email</div>
+    </div>
+
+
+    <div>
+      <button>Edit Profile</button>
+    </div>
+  </form>
+</div>

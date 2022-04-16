@@ -1,49 +1,133 @@
-<div class="container">
+<body>
+<a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
+<span class="navbar-text"> Най - надежндните доставки в страната
+  </span>
+
+<nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
+
+  <a class="navbar-brand under" href="/">PDS</a>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Agent
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-agent">Add Agent</a>
+          <a class="dropdown-item" href="/delete-agent">Delete Agent</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Vehicle
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-vehicle">Add Vehicle</a>
+          <a class="dropdown-item" href="/delete-vehicle">Delete Vehicle</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Office
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-office">Add Office</a>
+          <a class="dropdown-item" href="/delete-office">Delete Office</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Driver
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-driver">Add Driver</a>
+          <a class="dropdown-item" href="/delete-driver">Delete Driver</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class ="container move">
   <form class="add-office" (ngSubmit)="addOfficeForm.valid && addOffice()" #addOfficeForm="ngForm" novalidate>
 
 
     <!--city-->
+    <div class="form-group">
     <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
       <label for="city">City</label>
+      <div class="col-lg-6">
       <input type="text" name="city" [(ngModel)]="addNewOffice.city" #capacity="ngModel" required />
     </div>
 
     <!--country-->
+      <div class="form-group">
     <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
       <label for="country">Country</label>
+      <div class="col-lg-6">
       <input type="text" name="country" [(ngModel)]="addNewOffice.country" #capacity="ngModel" required />
+    </div>
     </div>
 
     <!--name-->
+      <div class="form-group">
     <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
       <label for="name">Name</label>
+      <div class="col-lg-6">
       <input type="text" name="name" [(ngModel)]="addNewOffice.name" #capacity="ngModel" required />
     </div>
+    </div>
+      </div>
 
     <!--postcode-->
+      <div class="form-group">
     <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
       <label for="postcode">Postcode</label>
+      <div class="col-lg-6">
       <input type="number" name="postcode" [(ngModel)]="addNewOffice.postcode" #capacity="ngModel" required />
     </div>
+    </div>
+      </div>
 
     <!--street-->
+      <div class="form-group">
     <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
       <label for="street">Street</label>
+      <div class="col-lg-6">
       <input type="text" name="street" [(ngModel)]="addNewOffice.street" #fuelType="ngModel" required />
-
+      </div>
     </div>
+      </div>
     <!--region-->
+      <div class="form-group">
     <div [ngClass]="{ 'has-error': addOfficeForm.submitted}">
       <label for="region">Region</label>
+      <div class="col-lg-6">
       <input type="text" name="region" [(ngModel)]="addNewOffice.region" #fuelType="ngModel" required />
-
+      </div>
+    </div>
     </div>
 
 
 
     <div *ngIf="addOfficeForm.submitted">Office added!</div>
     <div>
-      <button>Add Office</button>
+      <div>
+        <div class="col-lg-6">
+          <button type="submit" class="btn btn-primary centerButton">Add Office</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
     </div>
   </form>
 </div>

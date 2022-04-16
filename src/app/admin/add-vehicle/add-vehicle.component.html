@@ -1,45 +1,121 @@
-<div class="container">
+<body>
+<a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
+<span class="navbar-text"> Най - надежндните доставки в страната
+  </span>
+
+<nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
+
+  <a class="navbar-brand under" href="/">PDS</a>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Agent
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-agent">Add Agent</a>
+          <a class="dropdown-item" href="/delete-agent">Delete Agent</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Vehicle
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-vehicle">Add Vehicle</a>
+          <a class="dropdown-item" href="/delete-vehicle">Delete Vehicle</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Office
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-office">Add Office</a>
+          <a class="dropdown-item" href="/delete-office">Delete Office</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Driver
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-driver">Add Driver</a>
+          <a class="dropdown-item" href="/delete-driver">Delete Driver</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container move">
     <form class="add-vehicle" (ngSubmit)="addVehicleForm.valid && addVehicle()" #addVehicleForm="ngForm" novalidate>
 
 
         <!--capacity-->
+      <div class="form-group">
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="capacity">Capacity</label>
+          <div class="col-lg-6">
             <input type="number" name="capacity" [(ngModel)]="addNewVehicle.capacity" #capacity="ngModel" required />
+        </div>
+        </div>
         </div>
 
         <!--range-->
+      <div class="form-group">
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="range">Range</label>
+          <div class="col-lg-6">
             <input type="text" name="range" [(ngModel)]="addNewVehicle.range" #range="ngModel" required />
-
+          </div>
+        </div>
         </div>
 
         <!--brand-->
+      <div class="form-group">
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="brand">Brand</label>
+          <div class="col-lg-6">
             <input type="text" name="brand" [(ngModel)]="addNewVehicle.brand" #brand="ngModel" required />
-
+          </div>
         </div>
+      </div>
 
         <!--year-->
+      <div class="form-group">
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="year">Year</label>
+          <div class="col-lg-6">
             <input type="number" name="year" [(ngModel)]="addNewVehicle.year" #year="ngModel" required />
+        </div>
+        </div>
         </div>
 
         <!--fuel type-->
+      <div class="form-group">
         <div [ngClass]="{ 'has-error': addVehicleForm.submitted}">
             <label for="fuelType">Fuel Type</label>
+          <div class="col-lg-6">
             <input type="text" name="fuelType" [(ngModel)]="addNewVehicle.fuelType" #fuelType="ngModel" required />
-
+          </div>
         </div>
+      </div>
 
 
 
         <div *ngIf="addVehicleForm.submitted">Vehicle added!</div>
-        <div>
-            <button>Add vehicle</button>
-        </div>
+      <div class="col-lg-6">
+        <button type="submit" class="btn btn-primary centerButton">Add Vehicle</button>
+      </div>
+
     </form>
 </div>

@@ -1,49 +1,132 @@
-<div class="container">
+<body>
+<a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
+<span class="navbar-text"> Най - надежндните доставки в страната
+  </span>
+
+<nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
+
+  <a class="navbar-brand under" href="/">PDS</a>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Agent
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-agent">Add Agent</a>
+          <a class="dropdown-item" href="/delete-agent">Delete Agent</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Vehicle
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-vehicle">Add Vehicle</a>
+          <a class="dropdown-item" href="/delete-vehicle">Delete Vehicle</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Office
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-office">Add Office</a>
+          <a class="dropdown-item" href="/delete-office">Delete Office</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Driver
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-driver">Add Driver</a>
+          <a class="dropdown-item" href="/delete-driver">Delete Driver</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container move">
   <form class="add-driver" (ngSubmit)="addDriverForm.valid && addDriver()" #addDriverForm="ngForm" novalidate>
 
-
+    <div class="form-group">
     <!--email-->
     <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
       <label for="email">Email</label>
+      <div class="col-lg-6">
       <input type="email" name="email" [(ngModel)]="addNewDriver.email" #capacity="ngModel" required />
+    </div>
+      <div class="form-group">
+      </div>
     </div>
 
     <!--firstName-->
     <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
       <label for="firstName">First Name</label>
+      <div class="col-lg-6">
       <input type="text" name="firstName" [(ngModel)]="addNewDriver.firstName" #capacity="ngModel" required />
+    </div>
+      <div class="form-group">
+      </div>
     </div>
 
     <!--lastName-->
     <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
       <label for="lastName">Last Name</label>
+      <div class="col-lg-6">
       <input type="text" name="lastName" [(ngModel)]="addNewDriver.lastName" #capacity="ngModel" required />
     </div>
+    </div>
+      <div class="form-group">
 
     <!--password-->
     <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
       <label for="password">Password</label>
+      <div class="col-lg-6">
       <input type="password" name="password" [(ngModel)]="addNewDriver.password" #capacity="ngModel" required />
-    </div>
 
+    </div>
+    </div>
+      <div class="form-group">
     <!--phoneNumber-->
     <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
       <label for="phoneNumber">Phone Number</label>
+      <div class="col-lg-6">
       <input type="number" name="phoneNumber" [(ngModel)]="addNewDriver.phoneNumber" #fuelType="ngModel" required />
 
     </div>
+
+    </div>
+      <div class="form-group">
     <!--Remaining Paid leave-->
     <div [ngClass]="{ 'has-error': addDriverForm.submitted}">
       <label for="paidLeave">Paid Leave</label>
+      <div class="col-lg-6">
       <input type="text" name="paidLeave" [(ngModel)]="addNewDriver.remainingPaidLeave" #fuelType="ngModel" required />
-
+      </div>
     </div>
+      </div>
 
 
 
     <div *ngIf="addDriverForm.submitted">Driver added!</div>
-    <div>
-      <button>Add Driver</button>
+        <div>
+          <div class="col-lg-6">
+            <button type="submit" class="btn btn-primary centerButton">Add Driver</button>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
   </form>
 </div>

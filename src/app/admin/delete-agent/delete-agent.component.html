@@ -1,14 +1,76 @@
-<div class ="container">
+<body>
+<a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
+<span class="navbar-text"> Най - надежндните доставки в страната
+  </span>
+
+<nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
+
+  <a class="navbar-brand under" href="/">PDS</a>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Agent
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-agent">Add Agent</a>
+          <a class="dropdown-item" href="/delete-agent">Delete Agent</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Vehicle
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-vehicle">Add Vehicle</a>
+          <a class="dropdown-item" href="/delete-vehicle">Delete Vehicle</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Office
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-office">Add Office</a>
+          <a class="dropdown-item" href="/delete-office">Delete Office</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Driver
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/add-driver">Add Driver</a>
+          <a class="dropdown-item" href="/delete-driver">Delete Driver</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class ="container move">
     <form class="deleteAgent" (ngSubmit)="deleteAgentF.form.valid && deleteAgent()" #deleteAgentF="ngForm" novalidate>
         <div [ngClass]="{ 'has-error': deleteAgentF.submitted}">
-            <label for="number">Agent Id</label>
+          <label class="control-label col-sm-2" for="email">Agent ID:</label>
+          <div class="col-lg-6">
             <input type="number"
               name="agentId" [(ngModel)]="agentId"
                 #email="ngModel" required />
             <div *ngIf="deleteAgentF.submitted">Poof, gone!</div>
         </div>
         <div>
-            <button>Delete Agent</button>
+          <div class="col-lg-6">
+            <button type="submit" class="btn btn-primary centerButton">Delete agent</button>
+          </div>
+        </div>
         </div>
     </form>
 </div>
