@@ -8,3 +8,10 @@ export interface DriverModel{
     firstName:string;
     driverStatus:string;
 }
+
+export interface WorkingAdressModel {
+    country:string;
+    city:string;
+    postCode:string;
+    region:string;
+}

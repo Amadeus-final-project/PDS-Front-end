@@ -1,0 +1,40 @@
+<div class="container">
+    <form class="set" (ngSubmit)="setAddressForm.form.valid && setWorkingAddress()" #setAddressForm="ngForm" novalidate>
+
+
+        <!-- country -->
+        <div [ngClass]="{ 'has-error': setAddressForm.submitted}">
+            <label for="country">Country</label>
+            <input type="text" name="country" [(ngModel)]="addressModel.country" #country="ngModel" required />
+        </div>
+
+        <!-- city -->
+        <div [ngClass]="{ 'has-error': setAddressForm.submitted}">
+            <label for="city">City</label>
+            <input type="text" name="city" [(ngModel)]="addressModel.city" #city="ngModel"
+                required />
+        </div>
+
+        <!-- Post code -->
+        <div [ngClass]="{ 'has-error': setAddressForm.submitted}">
+            <label for="postCode">Post Code</label>
+            <input type="text" name="postCode" [(ngModel)]="addressModel.postCode"
+                #postCode="ngModel" required />
+        </div>
+
+
+        <!--region-->
+        <div [ngClass]="{ 'has-error': setAddressForm.submitted}">
+            <label for="region">Region</label>
+            <input type="text" name="region" [(ngModel)]="addressModel.region" #region="ngModel"
+                required />
+
+        </div>
+
+
+        <div *ngIf="setAddressForm.submitted">set! </div>
+        <div>
+            <button>Set Address</button>
+        </div>
+    </form>
+</div>

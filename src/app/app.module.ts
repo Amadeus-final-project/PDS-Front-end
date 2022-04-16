@@ -41,6 +41,7 @@ import { CustomerHomeComponent } from './home/customer-home/customer-home.compon
 import { GetAllPendingPackagesComponent } from './package/get-all-pending-packages/get-all-pending-packages.component';
 import { GetAllTransactionsComponent } from './transaction/get-all-transactions/get-all-transactions.component';
 import { GetTransactionByUserComponent } from './transaction/get-transaction-by-user/get-transaction-by-user.component';
+import { SetWorkingAdressComponent } from './driver/set-working-adress/set-working-adress.component';
 
 
 
@@ -77,7 +78,8 @@ import { GetTransactionByUserComponent } from './transaction/get-transaction-by-
     CustomerHomeComponent,
     GetAllPendingPackagesComponent,
     GetAllTransactionsComponent,
-    GetTransactionByUserComponent
+    GetTransactionByUserComponent,
+    SetWorkingAdressComponent
   ],
   imports: [
     BrowserModule,
