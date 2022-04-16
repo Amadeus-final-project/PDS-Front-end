@@ -9,6 +9,7 @@ import { ReleaseVehicleComponent } from './release-vehicle/release-vehicle.compo
 import { CheckInOfficeComponent } from './check-in-office/check-in-office.component';
 import { StartWorkComponent } from './start-work/start-work.component';
 import { SetWorkingAdressComponent } from './set-working-adress/set-working-adress.component';
+import { GetAllPackagesInMyCityComponent } from './get-all-packages-in-my-city/get-all-packages-in-my-city.component';
 
 
 
@@ -20,6 +21,7 @@ import { SetWorkingAdressComponent } from './set-working-adress/set-working-adre
       CheckInOfficeComponent,
       StartWorkComponent,
       SetWorkingAdressComponent,
+      GetAllPackagesInMyCityComponent,
   ],
   imports: [
     CommonModule,

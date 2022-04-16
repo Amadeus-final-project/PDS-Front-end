@@ -32,8 +32,10 @@ import { DriverHomeComponent } from './home/driver-home/driver-home.component';
 import { AgentHomeComponent } from './home/agent-home/agent-home.component';
 import { CustomerHomeComponent } from './home/customer-home/customer-home.component';
 import { GetAllPendingPackagesComponent } from './package/get-all-pending-packages/get-all-pending-packages.component';
-import { GetAllTransactionsComponent } from './transaction/get-all-transactions/get-all-transactions.component';
+import { GetAllTransactionsComponent } from './get-all-transactions/get-all-transactions.component';
 import { SetWorkingAdressComponent } from './driver/set-working-adress/set-working-adress.component';
+import { GetAllPackagesInMyCityComponent } from './driver/get-all-packages-in-my-city/get-all-packages-in-my-city.component';
+import { GetAllUnapprovedVacationsComponent } from './admin/get-all-unapproved-vacations/get-all-unapproved-vacations.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -70,6 +72,10 @@ const routes: Routes = [
       {path: `get-all-transactions`, component: GetAllTransactionsComponent},
       {path: `get-transactions-by-user`, component: GetAllTransactionsComponent},
       {path: `set-working-address`, component: SetWorkingAdressComponent},
+      {path: `get-all-packages-in-my-city`, component: GetAllPackagesInMyCityComponent},
+      {path: `get-all-unapproved-vacations`, component: GetAllUnapprovedVacationsComponent},
+
+
 
 
     ]},

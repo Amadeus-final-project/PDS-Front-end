@@ -39,9 +39,12 @@ import { DriverHomeComponent } from './home/driver-home/driver-home.component';
 import { AgentHomeComponent } from './home/agent-home/agent-home.component';
 import { CustomerHomeComponent } from './home/customer-home/customer-home.component';
 import { GetAllPendingPackagesComponent } from './package/get-all-pending-packages/get-all-pending-packages.component';
-import { GetAllTransactionsComponent } from './transaction/get-all-transactions/get-all-transactions.component';
+import { GetAllTransactionsComponent } from './get-all-transactions/get-all-transactions.component';
 import { GetTransactionByUserComponent } from './transaction/get-transaction-by-user/get-transaction-by-user.component';
 import { SetWorkingAdressComponent } from './driver/set-working-adress/set-working-adress.component';
+import { GetAllPackagesInMyCityComponent } from './driver/get-all-packages-in-my-city/get-all-packages-in-my-city.component';
+import { GetAllUnapprovedVacationsComponent } from './admin/get-all-unapproved-vacations/get-all-unapproved-vacations.component';
+
 
 
 
@@ -79,7 +82,9 @@ import { SetWorkingAdressComponent } from './driver/set-working-adress/set-worki
     GetAllPendingPackagesComponent,
     GetAllTransactionsComponent,
     GetTransactionByUserComponent,
-    SetWorkingAdressComponent
+    SetWorkingAdressComponent,
+    GetAllPackagesInMyCityComponent,
+    GetAllUnapprovedVacationsComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,7 @@ import { SetWorkingAdressComponent } from './driver/set-working-adress/set-worki
     AppRoutingModule,
     CoreModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [
     Authentication,

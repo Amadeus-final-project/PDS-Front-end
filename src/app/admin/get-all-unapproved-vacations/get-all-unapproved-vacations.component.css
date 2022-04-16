@@ -1,0 +1,26 @@
+
+form.review {
+    width: 40%;
+    text-align: center;
+}
+
+
+.review input {
+    flex: 0 1 100%;
+    border: 1px solid;
+}
+
+.review {
+    color: darkblue;
+    border: none;
+    width: 60%;
+    outline: none;
+}
+
+
+.review .field{
+    display: flex;
+    padding-bottom: 0;
+}
+
+

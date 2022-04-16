@@ -34,4 +34,13 @@ export interface AddOfficeModel {
   street: string;
 }
 
+export interface VacationSimpleModel {
+  vacationId: number;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+  firstName: string;
+  lastName: string;
+}
+
 
