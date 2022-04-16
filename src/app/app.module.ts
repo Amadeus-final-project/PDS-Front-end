@@ -30,6 +30,10 @@ import { ApprovePackageComponent } from './agent/approve-package/approve-package
 import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component';
 import {Gateway} from "./interceptors/gateway-guard";
 import {SharedModule} from "./shared/shared.module";
+import { ReleaseVehicleComponent } from './driver/release-vehicle/release-vehicle.component';
+import { CheckInOfficeComponent } from './driver/check-in-office/check-in-office.component';
+import { StartWorkComponent } from './driver/start-work/start-work.component';
+import { GetAllPackagesComponent } from './package/get-all-packages/get-all-packages.component';
 
 
 
@@ -55,7 +59,11 @@ import {SharedModule} from "./shared/shared.module";
     DeleteOfficeComponent,
     DisapprovePackageComponent,
     ApprovePackageComponent,
-    GetVehicleComponent
+    GetVehicleComponent,
+    ReleaseVehicleComponent,
+    CheckInOfficeComponent,
+    StartWorkComponent,
+    GetAllPackagesComponent
   ],
   imports: [
     BrowserModule,
