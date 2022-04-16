@@ -31,6 +31,8 @@ import { AdminHomeComponent } from './home/admin-home/admin-home.component';
 import { DriverHomeComponent } from './home/driver-home/driver-home.component';
 import { AgentHomeComponent } from './home/agent-home/agent-home.component';
 import { CustomerHomeComponent } from './home/customer-home/customer-home.component';
+import { GetAllPendingPackagesComponent } from './package/get-all-pending-packages/get-all-pending-packages.component';
+import { GetAllTransactionsComponent } from './transaction/get-all-transactions/get-all-transactions.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -63,6 +65,9 @@ const routes: Routes = [
       {path: `check-in-office`, component: CheckInOfficeComponent},
       {path: `start-work`, component: StartWorkComponent},
       {path: `get-all-packages`, component: GetAllPackagesComponent},
+      {path: `get-all-pending-packages`, component: GetAllPendingPackagesComponent},
+      {path: `get-all-transactions`, component: GetAllTransactionsComponent},
+      {path: `get-transactions-by-user`, component: GetAllTransactionsComponent},
 
     ]},
   {path: 'gateway', canActivate: [Gateway], component: PlaceholderComponent},

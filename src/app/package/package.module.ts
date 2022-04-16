@@ -6,6 +6,7 @@ import {FormsModule} from "@angular/forms";
 
 import { SendComponent } from './send/send.component';
 import { GetAllPackagesComponent } from './get-all-packages/get-all-packages.component';
+import { GetAllPendingPackagesComponent } from './get-all-pending-packages/get-all-pending-packages.component';
 
 
 
@@ -13,6 +14,7 @@ import { GetAllPackagesComponent } from './get-all-packages/get-all-packages.com
   declarations: [
       SendComponent,
       GetAllPackagesComponent,
+      GetAllPendingPackagesComponent,
   ],
   imports: [
     CommonModule,

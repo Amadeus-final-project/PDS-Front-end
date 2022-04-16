@@ -38,6 +38,9 @@ import { AdminHomeComponent } from './home/admin-home/admin-home.component';
 import { DriverHomeComponent } from './home/driver-home/driver-home.component';
 import { AgentHomeComponent } from './home/agent-home/agent-home.component';
 import { CustomerHomeComponent } from './home/customer-home/customer-home.component';
+import { GetAllPendingPackagesComponent } from './package/get-all-pending-packages/get-all-pending-packages.component';
+import { GetAllTransactionsComponent } from './transaction/get-all-transactions/get-all-transactions.component';
+import { GetTransactionByUserComponent } from './transaction/get-transaction-by-user/get-transaction-by-user.component';
 
 
 
@@ -72,6 +75,9 @@ import { CustomerHomeComponent } from './home/customer-home/customer-home.compon
     DriverHomeComponent,
     AgentHomeComponent,
     CustomerHomeComponent,
+    GetAllPendingPackagesComponent,
+    GetAllTransactionsComponent,
+    GetTransactionByUserComponent
   ],
   imports: [
     BrowserModule,
