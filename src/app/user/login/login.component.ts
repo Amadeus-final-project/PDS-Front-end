@@ -45,7 +45,7 @@ login() { //https://localhost:9000/
           "token", response.token || "");
           this.userService.isLoggedIn = true;
           // TODO: redirect /gateway
-	this.router.navigate(['/home']);
+	this.router.navigate(['/gateway']);
     } else {
         alert("Authentication failed.")
     }

@@ -27,6 +27,10 @@ import { ReleaseVehicleComponent } from './driver/release-vehicle/release-vehicl
 import { CheckInOfficeComponent } from './driver/check-in-office/check-in-office.component';
 import { StartWorkComponent } from './driver/start-work/start-work.component';
 import { GetAllPackagesComponent } from './package/get-all-packages/get-all-packages.component';
+import { AdminHomeComponent } from './home/admin-home/admin-home.component';
+import { DriverHomeComponent } from './home/driver-home/driver-home.component';
+import { AgentHomeComponent } from './home/agent-home/agent-home.component';
+import { CustomerHomeComponent } from './home/customer-home/customer-home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -34,10 +38,10 @@ const routes: Routes = [
   {path: 'logout', redirectTo: '/login'},
   {path: 'register', component: RegisterComponent},
   {path: '', canActivate:[Authentication], children:[
-      {path: 'admin-home', component: HomeComponent},
-      {path: 'driver-home', component: HomeComponent},
-      {path: 'agent-home', component: HomeComponent},
-      {path: 'customer-home', component: HomeComponent},
+      {path: 'admin-home', component: AdminHomeComponent},
+      {path: 'driver-home', component: DriverHomeComponent},
+      {path: 'agent-home', component: AgentHomeComponent},
+      {path: 'customer-home', component: CustomerHomeComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'getAllMyPackages', component: GetAllMyPackagesComponent},
       {path: 'forgottenPassword', component: ForgottenPasswordComponent},
@@ -59,7 +63,6 @@ const routes: Routes = [
       {path: `check-in-office`, component: CheckInOfficeComponent},
       {path: `start-work`, component: StartWorkComponent},
       {path: `get-all-packages`, component: GetAllPackagesComponent},
-
 
     ]},
   {path: 'gateway', canActivate: [Gateway], component: PlaceholderComponent},

@@ -34,6 +34,10 @@ import { ReleaseVehicleComponent } from './driver/release-vehicle/release-vehicl
 import { CheckInOfficeComponent } from './driver/check-in-office/check-in-office.component';
 import { StartWorkComponent } from './driver/start-work/start-work.component';
 import { GetAllPackagesComponent } from './package/get-all-packages/get-all-packages.component';
+import { AdminHomeComponent } from './home/admin-home/admin-home.component';
+import { DriverHomeComponent } from './home/driver-home/driver-home.component';
+import { AgentHomeComponent } from './home/agent-home/agent-home.component';
+import { CustomerHomeComponent } from './home/customer-home/customer-home.component';
 
 
 
@@ -63,7 +67,11 @@ import { GetAllPackagesComponent } from './package/get-all-packages/get-all-pack
     ReleaseVehicleComponent,
     CheckInOfficeComponent,
     StartWorkComponent,
-    GetAllPackagesComponent
+    GetAllPackagesComponent,
+    AdminHomeComponent,
+    DriverHomeComponent,
+    AgentHomeComponent,
+    CustomerHomeComponent,
   ],
   imports: [
     BrowserModule,

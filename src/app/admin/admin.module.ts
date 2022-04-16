@@ -10,6 +10,7 @@ import { DeleteVehicleComponent } from './delete-vehicle/delete-vehicle.componen
 import { DeleteDriverComponent } from './delete-driver/delete-driver.component';
 import { DeleteAgentComponent } from './delete-agent/delete-agent.component';
 import { DeleteOfficeComponent } from './delete-office/delete-office.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 
@@ -24,6 +25,7 @@ import { DeleteOfficeComponent } from './delete-office/delete-office.component';
     DeleteDriverComponent,
     DeleteAgentComponent,
     DeleteOfficeComponent,
+    AdminHomeComponent,
   ],
   imports: [
     CommonModule,

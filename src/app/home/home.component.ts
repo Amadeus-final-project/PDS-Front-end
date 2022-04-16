@@ -12,6 +12,8 @@ interface PackageModel {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent{
 
   myPackages: PackageModel[]= [];

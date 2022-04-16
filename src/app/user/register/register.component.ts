@@ -39,7 +39,7 @@ register():void{
 })
   .subscribe((response) => {
     if (response) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/gateway']);
     }else {
       alert("Registration failed");
     }
