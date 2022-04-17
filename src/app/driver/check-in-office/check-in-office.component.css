@@ -18,7 +18,7 @@ body{
   background-color: aliceblue;
 }
 .centerButton{
-  margin-left:10%;
+  margin-left:22%;
   font-size: 28px;
   border-radius: 17px ;
   margin-top: 2%;
@@ -44,9 +44,15 @@ body{
 .navbar-brand{
   margin-left:10%;
 }
-.under{
-  font-size:42px;
+.under {
+  font-size: 42px;
   color: grey;
 }
+
+.padding{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 
 

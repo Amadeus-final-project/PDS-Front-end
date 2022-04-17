@@ -58,6 +58,7 @@
     </ul>
   </div>
 </nav>
+<div class ="padding">
 <div class="container move">
     <form class="set" (ngSubmit)="setAddressForm.form.valid && setWorkingAddress()" #setAddressForm="ngForm" novalidate>
 
@@ -109,10 +110,11 @@
 
               <div class="form-group">
         <div *ngIf="setAddressForm.submitted">set! </div>
-        <div>
-            <button>Set Address</button>
-        </div>
+                <div class="col-lg-6">
+                  <button type="submit" class="btn btn-primary centerButton">Set Address</button>
+                </div>
               </div>
 
     </form>
+</div>
 </div>

@@ -58,6 +58,7 @@
     </ul>
   </div>
 </nav>
+<div class ="padding">
 <div class ="container move">
     <form class="getVehicle" (ngSubmit)="f.form.valid && getVehicle()" #f="ngForm" novalidate>
       <div class="form-group">
@@ -69,10 +70,11 @@
                 #email="ngModel" required />
             <div *ngIf="f.submitted">Vehicle taken!</div>
         </div>
-        <div>
-            <button>Get Vehicle</button>
-        </div>
+          <div class="col-lg-6">
+            <button type="submit" class="btn btn-primary centerButton">Get vehicle</button>
+          </div>
         </div>
       </div>
     </form>
+</div>
 </div>
