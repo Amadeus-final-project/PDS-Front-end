@@ -56,6 +56,7 @@
     </ul>
   </div>
 </nav>
+<div class ="padding">
 <div class ="container move">
     <form class="deleteOffice" (ngSubmit)="f.form.valid && deleteOffice()" #f="ngForm" novalidate>
         <div [ngClass]="{ 'has-error': f.submitted}">
@@ -71,4 +72,5 @@
           </div>
         </div>
     </form>
+</div>
 </div>

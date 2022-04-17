@@ -56,6 +56,7 @@
     </ul>
   </div>
 </nav>
+<div class ="padding">
 <div class ="container move">
     <form class="deleteAgent" (ngSubmit)="deleteAgentF.form.valid && deleteAgent()" #deleteAgentF="ngForm" novalidate>
         <div [ngClass]="{ 'has-error': deleteAgentF.submitted}">
@@ -73,4 +74,5 @@
         </div>
         </div>
     </form>
+</div>
 </div>
