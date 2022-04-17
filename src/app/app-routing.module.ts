@@ -41,6 +41,7 @@ import { GetAllMyTransactionsComponent } from './user/get-all-transactions/get-a
 import { GetAllVehiclesComponent } from './driver/get-all-vehicles/get-all-vehicles.component';
 import { RequestVacationComponent } from './driver/request-vacation/request-vacation.component';
 import { RequestVacationAComponent } from './agent/request-vacation-a/request-vacation-a.component';
+import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -84,6 +85,8 @@ const routes: Routes = [
       {path: `get-all-vehicles`, component: GetAllVehiclesComponent},
       {path: `request-vacation`, component: RequestVacationComponent},
       {path: `request-vacation-a`, component: RequestVacationAComponent},
+      {path: `get-all-offices`, component: GetAllOfficesComponent},
+
 
 
 

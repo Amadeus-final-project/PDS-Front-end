@@ -3,15 +3,15 @@ export class Admin {
 
 export interface AddVehicleModel {
 
-    capacity:number;
-    range: string;
-    brand :string;
-    year: number;
-    fuelType:string;
+  capacity: number;
+  range: string;
+  brand: string;
+  year: number;
+  fuelType: string;
 }
 export interface AddAgentModel {
-  email:string;
-  firstName:string;
+  email: string;
+  firstName: string;
   lastName: string;
   password: string;
   phoneNumber: string;
@@ -43,4 +43,17 @@ export interface VacationSimpleModel {
   lastName: string;
 }
 
+export interface OfficeModel {
+  name: string;
+  country: string;
+  city: string;
+  postcode: string;
+  regions: string;
+  street: string;
+}
 
+export interface AgentModel {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+}
