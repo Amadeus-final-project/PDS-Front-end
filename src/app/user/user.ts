@@ -1,7 +1,6 @@
 export interface IUser {
     email: string;
     password: string;
-
 }
 
 export interface RegisterUser {
@@ -21,4 +20,10 @@ export interface EditUser{
 
 export interface forgottenUser{
   email: string;
+}
+
+export interface ChangePassword{
+  oldPass:string,
+  newPass:string,
+  confirmPass:string,
 }

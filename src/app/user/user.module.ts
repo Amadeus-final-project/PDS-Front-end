@@ -8,6 +8,8 @@ import {ProfileComponent} from "./profile/profile.component";
 import {FormsModule} from "@angular/forms";
 import { ForgottenPasswordComponent } from './forgottenPassword/forgottenPassword.component';
 import { GetAllMyPackagesComponent } from './getAllMyPackages/getAllMyPackages.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { GetAllTransactionsComponent } from './get-all-transactions/get-all-transactions.component';
 
 
 
@@ -18,6 +20,8 @@ import { GetAllMyPackagesComponent } from './getAllMyPackages/getAllMyPackages.c
     ProfileComponent,
     ForgottenPasswordComponent,
     GetAllMyPackagesComponent,
+    ChangePasswordComponent,
+    GetAllTransactionsComponent,
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,8 @@ import { CheckInOfficeComponent } from './check-in-office/check-in-office.compon
 import { StartWorkComponent } from './start-work/start-work.component';
 import { SetWorkingAdressComponent } from './set-working-adress/set-working-adress.component';
 import { GetAllPackagesInMyCityComponent } from './get-all-packages-in-my-city/get-all-packages-in-my-city.component';
+import { GetAllVehiclesComponent } from './get-all-vehicles/get-all-vehicles.component';
+import { RequestVacationComponent } from './request-vacation/request-vacation.component';
 
 
 
@@ -22,6 +24,8 @@ import { GetAllPackagesInMyCityComponent } from './get-all-packages-in-my-city/g
       StartWorkComponent,
       SetWorkingAdressComponent,
       GetAllPackagesInMyCityComponent,
+      GetAllVehiclesComponent,
+      RequestVacationComponent,
   ],
   imports: [
     CommonModule,

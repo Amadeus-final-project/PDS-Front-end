@@ -1,0 +1,80 @@
+<div class="container move">
+    <form class="send" (ngSubmit)="f.form.valid && requestVacation()" #f="ngForm" novalidate>
+
+
+        <!-- start date -->
+        <div class="form-group">
+            <div [ngClass]="{ 'has-error': vacation.startDate}">
+                <label for="date">Start date</label>
+                <div class="col-lg-6">
+                    <input type="date" name="date" [(ngModel)]="vacation.startDate" #startDate="ngModel" required />
+                </div>
+            </div>
+
+
+            <!-- end date -->
+            <div class="form-group">
+                <div [ngClass]="{ 'has-error': vacation.endDate}">
+                    <label for="date">End date</label>
+                    <div class="col-lg-6">
+                        <input type="date" name="date" [(ngModel)]="vacation.endDate" #endDate="ngModel" required />
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- description -->
+            <div class="form-group">
+                <div [ngClass]="{ 'has-error': f.submitted}">
+                    <label for="description">Description</label>
+                    <div class="col-lg-6">
+                        <input type="text" name="description" [(ngModel)]="vacation.description" #description="ngModel"
+                            required />
+                    </div>
+                </div>
+
+
+
+                <!-- vacation type -->
+                <div class="form-group">
+                    <div [ngClass]="{ 'has-error': f.submitted}">
+                        <label for="vacationType">Vacation Type</label>
+                        <div class="col-lg-6">
+                             <input type="radio" id="express" name="vacationType" value="PAID_LEAVE" name="vacationType"
+                                [(ngModel)]="vacation.vacationType" #vacationType="ngModel" required>
+                              <label for="express">Paid Leave</label>
+
+
+                              <input type="radio" id="economy" name="vacationType" value="UNPAID_LEAVE"
+                                name="vacationType" [(ngModel)]="vacation.vacationType" #vacationType="ngModel"
+                                required>
+                            <input type="hidden" name="vacationType" value="2" />
+                              <label for="economy">Unpaid Leave</label><br>
+                        </div>
+                    </div>
+                </div>
+
+
+                  <input type="radio" id="economy" name="vacationType" value="SICK_DAYS" name="vacationType"
+                    [(ngModel)]="vacation.vacationType" #vacationType="ngModel" required>
+                <input type="hidden" name="vacationType" value="2" />
+                  <label for="economy">Sick Days</label><br>
+
+                  <input type="radio" id="economy" name="vacationType" value="HOLIDAY" name="vacationType"
+                    [(ngModel)]="vacation.vacationType" #vacationType="ngModel" required>
+                <input type="hidden" name="vacationType" value="2" />
+                  <label for="economy">Holiday</label><br>
+
+
+
+                <div *ngIf="f.submitted">sent</div>
+
+                <div class="col-lg-6">
+                    <button type="submit" class="btn btn-primary centerButton">Request vacation</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

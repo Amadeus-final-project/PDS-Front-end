@@ -5,6 +5,7 @@ import {AgentRoutingModule} from './agent-routing.module';
 import { GetAllVacationsComponent } from './get-all-vacations/get-all-vacations.component';
 import { ApprovePackageComponent } from './approve-package/approve-package.component';
 import { DisapprovePackageComponent } from './disapprove-package/disapprove-package.component';
+import { RequestVacationAComponent } from './request-vacation-a/request-vacation-a.component';
 
 
 
@@ -13,6 +14,7 @@ import { DisapprovePackageComponent } from './disapprove-package/disapprove-pack
       GetAllVacationsComponent,
       ApprovePackageComponent,
       DisapprovePackageComponent,
+      RequestVacationAComponent,
   ],
   imports: [
     CommonModule,

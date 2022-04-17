@@ -15,3 +15,22 @@ export interface WorkingAdressModel {
     postCode:string;
     region:string;
 }
+
+export interface VehicleModel {
+    id:number;
+    isAvailable:boolean;
+    capacity:number;
+    range: Object;
+    brand: Object;
+    year: number;
+    fuelType: string;
+
+}
+
+export interface VacationModel {
+    startDate:Date;
+    endDate:Date;
+    description:string;
+    vacationType:string;
+
+}

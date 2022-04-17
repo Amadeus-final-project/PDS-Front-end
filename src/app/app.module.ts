@@ -44,6 +44,11 @@ import { GetTransactionByUserComponent } from './transaction/get-transaction-by-
 import { SetWorkingAdressComponent } from './driver/set-working-adress/set-working-adress.component';
 import { GetAllPackagesInMyCityComponent } from './driver/get-all-packages-in-my-city/get-all-packages-in-my-city.component';
 import { GetAllUnapprovedVacationsComponent } from './admin/get-all-unapproved-vacations/get-all-unapproved-vacations.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
+import { GetAllMyTransactionsComponent } from './user/get-all-transactions/get-all-transactions.component';
+import { GetAllVehiclesComponent } from './driver/get-all-vehicles/get-all-vehicles.component';
+import { RequestVacationComponent } from './driver/request-vacation/request-vacation.component';
+import { RequestVacationAComponent } from './agent/request-vacation-a/request-vacation-a.component';
 
 
 
@@ -84,7 +89,12 @@ import { GetAllUnapprovedVacationsComponent } from './admin/get-all-unapproved-v
     GetTransactionByUserComponent,
     SetWorkingAdressComponent,
     GetAllPackagesInMyCityComponent,
-    GetAllUnapprovedVacationsComponent
+    GetAllUnapprovedVacationsComponent,
+    ChangePasswordComponent,
+    GetAllMyTransactionsComponent,
+    GetAllVehiclesComponent,
+    RequestVacationComponent,
+    RequestVacationAComponent
   ],
   imports: [
     BrowserModule,

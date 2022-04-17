@@ -36,6 +36,11 @@ import { GetAllTransactionsComponent } from './get-all-transactions/get-all-tran
 import { SetWorkingAdressComponent } from './driver/set-working-adress/set-working-adress.component';
 import { GetAllPackagesInMyCityComponent } from './driver/get-all-packages-in-my-city/get-all-packages-in-my-city.component';
 import { GetAllUnapprovedVacationsComponent } from './admin/get-all-unapproved-vacations/get-all-unapproved-vacations.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
+import { GetAllMyTransactionsComponent } from './user/get-all-transactions/get-all-transactions.component';
+import { GetAllVehiclesComponent } from './driver/get-all-vehicles/get-all-vehicles.component';
+import { RequestVacationComponent } from './driver/request-vacation/request-vacation.component';
+import { RequestVacationAComponent } from './agent/request-vacation-a/request-vacation-a.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -74,6 +79,12 @@ const routes: Routes = [
       {path: `set-working-address`, component: SetWorkingAdressComponent},
       {path: `get-all-packages-in-my-city`, component: GetAllPackagesInMyCityComponent},
       {path: `get-all-unapproved-vacations`, component: GetAllUnapprovedVacationsComponent},
+      {path: `change-password`, component: ChangePasswordComponent},
+      {path: `get-all-my-transactions`, component: GetAllMyTransactionsComponent},
+      {path: `get-all-vehicles`, component: GetAllVehiclesComponent},
+      {path: `request-vacation`, component: RequestVacationComponent},
+      {path: `request-vacation-a`, component: RequestVacationAComponent},
+
 
 
 
