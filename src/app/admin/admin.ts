@@ -48,7 +48,7 @@ export interface OfficeModel {
   country: string;
   city: string;
   postcode: string;
-  regions: string;
+  region: string;
   street: string;
 }
 

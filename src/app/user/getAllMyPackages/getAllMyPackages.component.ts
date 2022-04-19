@@ -1,6 +1,5 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { PackageModel } from "src/app/package/package";
+import { PackageReceiveModel } from "src/app/package/package";
 import { UserService } from "../user.service";
 
 
@@ -9,23 +8,26 @@ import { UserService } from "../user.service";
     selector: 'app-getAllMyPackages',
     templateUrl: './getAllMyPackages.component.html',
     styleUrls: ['./getAllMyPackages.component.css']
-  })
+})
 
-  export class GetAllMyPackagesComponent implements OnInit {
+export class GetAllMyPackagesComponent implements OnInit {
 
 
-    myPackages: PackageModel[]= [];
+    myPackages: PackageReceiveModel[] = [];
 
-    constructor  (
-        private userService:UserService
-    ) {    }
+    constructor(
+        private userService: UserService
+    ) { }
 
 
 
     ngOnInit() {
-        this.userService.getAllMyPackages().subscribe((res:PackageModel[]) => {this.myPackages = res;});
-      }
+        this.userService.getAllMyPackages().subscribe((res: PackageReceiveModel[]) => {
+            this.myPackages = res;
+            console.log(this.myPackages)
+        });
+    }
 
 
-    
- }
+
+}

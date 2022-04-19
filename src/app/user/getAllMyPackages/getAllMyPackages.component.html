@@ -1,9 +1,9 @@
 <div class="packages">
     <div class="package" *ngFor= "let p of myPackages">
         <p>Id: {{p.id}}</p>
-        <p>Recipient: {{p.recipient}}</p>
-        <p>Start office: {{p.deliveryOffice}}</p>
-        <p>Destination office: {{p.deliveryToOffice}}</p>
+        <p>Recipient: {{p.recipient.firstName + ' ' + p.recipient.lastName}}</p>
+        <p>Destination office: {{p.deliveryOffice.name}}</p>
+        <p>Current office: {{p.currentLocation.name}}</p>
         <p>Delivery type: {{p.deliveryType}}</p>
         <p>Signed: {{p.isSigned}}</p>
         <p>Fragile: {{p.isFragile}}</p>

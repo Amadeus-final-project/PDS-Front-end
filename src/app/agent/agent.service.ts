@@ -57,7 +57,7 @@ export class AgentService {
   requestVacation(vacation:VacationRequestModel){
     let result = this.http.put(this.baseAgentURL + '/requestVacation', vacation).subscribe((response) => {
       if (response) {
-         this.router.navigate(['/']);
+         this.router.navigate(['/agent-home']);
       } else {
           alert("Something went wrong.")
       }

@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PackageModel } from '../package';
+import { PackageReceiveModel } from '../package';
 import { PackageService } from '../package.service';
 
 @Component({
@@ -10,25 +9,15 @@ import { PackageService } from '../package.service';
 })
 export class GetAllPendingPackagesComponent implements OnInit {
 
-  allPackages: PackageModel[] = [];
+  allPackages: PackageReceiveModel[] = [];
 
 
-  constructor(    private http: HttpClient,
+  constructor(
     private packageService:PackageService) { }
 
     ngOnInit() {
-      this.packageService.getAllPendingPackages().subscribe((res:PackageModel[]) => {this.allPackages = res;});
+      this.packageService.getAllPendingPackages().subscribe((res:PackageReceiveModel[]) => {this.allPackages = res;
+      console.log(res)});
+      console.log(this.allPackages)
     }
-
-  // ngOnInit(): void {
-  //   let url = this.packageService.basePackageURL + '/getPendingPackages';
-  //   let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-  //     if (response) {
-  //         this.allPackages = response;
-  //     } else {
-  //         alert("Something went wrong.")
-  //     }
-  // });
-  // }
-
 }

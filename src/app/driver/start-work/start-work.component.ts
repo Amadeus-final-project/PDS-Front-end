@@ -6,17 +6,20 @@ import { DriverService } from '../driver.service';
   templateUrl: './start-work.component.html',
   styleUrls: ['./start-work.component.css']
 })
-export class StartWorkComponent implements OnInit {
+export class StartWorkComponent {
+
+  //startWorke!:string;
 
   constructor(
     private driverService: DriverService) { }
 
 
-    packageRoutes: Array<number> = [1,2,3];
+    array:string = '';
 
 
-  ngOnInit(): void {
- this.driverService.startWork(this.packageRoutes);
+  startWork() {
+
+ this.driverService.startWork(this.array.split(','));
   }
   
 

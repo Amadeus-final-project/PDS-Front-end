@@ -72,3 +72,22 @@
     </div>
   </div>
 </div>
+
+
+<div class ="container">
+  <form class="startWork" (ngSubmit)="f.form.valid && startWork()" #f="ngForm" novalidate>
+
+      <div [ngClass]="{ 'has-error': f.submitted}">
+          <label for="array">IDs_csv</label>
+          <input type="text"
+            name="oldPass" [(ngModel)]="array"
+              #oldPass="ngModel" required />
+          <div *ngIf="f.submitted">submit</div>
+      </div>
+
+
+      <div>
+          <button>Set route</button>
+      </div>
+  </form>
+</div>

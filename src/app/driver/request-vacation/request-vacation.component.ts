@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { VacationModel } from '../driver';
 import { DriverService } from '../driver.service';
 
@@ -26,7 +27,7 @@ export class RequestVacationComponent {
 
 
   requestVacation(){
-    this.driverService.requestVacation(this.vacation)
+    this.driverService.requestVacation(this.vacation);
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PackageModel } from '../package';
+import { PackageReceiveModel } from '../package';
 import { PackageService } from '../package.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PackageService } from '../package.service';
 })
 export class GetAllPackagesComponent implements OnInit {
 
-  allPackages: PackageModel[] = [];
+  allPackages: PackageReceiveModel[] = [];
 
   constructor(
     private packageService:PackageService
@@ -17,7 +17,7 @@ export class GetAllPackagesComponent implements OnInit {
 
 
   ngOnInit() {
-    this.packageService.getAllPackages().subscribe((res:PackageModel[]) => {this.allPackages = res;});
+    this.packageService.getAllPackages().subscribe((res:PackageReceiveModel[]) => {this.allPackages = res;});
   }
 
 

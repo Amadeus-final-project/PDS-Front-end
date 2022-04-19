@@ -96,7 +96,7 @@ import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vaca
     RequestVacationAComponent,
     GetAllOfficesComponent,
     EditAgentProfileComponent,
-    GetAllVacationsComponent,
+    GetAllVacationsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PackageModel } from './package';
+import { PackageModel, PackageReceiveModel } from './package';
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +15,14 @@ export class PackageService {
   constructor(private http: HttpClient,
     private router: Router) { }
 
-    getAllPackages(): Observable<PackageModel[]>{
-return this.http.get<PackageModel[]>(this.basePackageURL + '/getAllPackages');
+    getAllPackages(): Observable<PackageReceiveModel[]>{
+return this.http.get<PackageReceiveModel[]>(this.basePackageURL + '/getAllPackages');
   
   }
 
 
-  getAllPendingPackages(): Observable<PackageModel[]>{
-    return this.http.get<PackageModel[]>(this.basePackageURL + '/getPendingPackages');
+  getAllPendingPackages(): Observable<PackageReceiveModel[]>{
+    return this.http.get<PackageReceiveModel[]>(this.basePackageURL + '/getPendingPackages');
   }
 
   send(sendPackage:PackageModel){

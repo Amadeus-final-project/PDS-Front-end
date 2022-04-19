@@ -62,7 +62,7 @@ export class DriverService {
     requestVacation(vacation:VacationModel){
       let result = this.http.put(this.baseDriverURL + '/requestVacation', vacation).subscribe((response) => {
         if (response) {
-            // this.router.navigate(['/']);
+            this.router.navigate(['/driver-home']);
           
         } else {
             alert("Something went wrong.")
@@ -80,15 +80,14 @@ export class DriverService {
     });
   }
 
-  startWork(packageRoutes:Array<number>): void {
-
+  startWork(packageRoutes:Array<string>): void {
     let result = this.http.put(this.baseDriverURL + '/startWork', packageRoutes).subscribe((response) => {
       if (response) {
+          console.log(response);
           this.router.navigate(['/driver']);
-      } else {
-          alert("Can't start work")
       }
-  });
+  },(errorResponse => alert(errorResponse.error.message)));
   }
 
 }
+

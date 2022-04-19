@@ -55,7 +55,7 @@
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
             <label for="email">Recipient Email</label>
           <div class="col-lg-6">
-            <input type="text" name="email" [(ngModel)]="sendPackage.recipient" #email="ngModel" required />
+            <input type="text" name="recipient" [(ngModel)]="sendPackage.recipient" #recipient="ngModel" required />
         </div>
         </div>
 
@@ -64,7 +64,7 @@
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
             <label for="deliveryOffice">Delivery From</label>
           <div class="col-lg-6">
-            <input type="text" name="deliveryOffice" [(ngModel)]="sendPackage.deliveryOffice" #deliveryType="ngModel"
+            <input type="text" name="deliveryOffice" [(ngModel)]="sendPackage.deliveryOffice" #deliveryOffice="ngModel"
                 required />
         </div>
         </div>
@@ -72,9 +72,9 @@
         <!-- deliveryTo office -->
           <div class="form-group">
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
-            <label for="deliveryToOffice">Delivery To</label>
+            <label for="office">Delivery To</label>
           <div class="col-lg-6">
-            <input type="text" name="deliveryToOffice" [(ngModel)]="sendPackage.deliveryToOffice"
+            <input type="text" name="office" [(ngModel)]="sendPackage.currentLocation"
                 #deliveryType="ngModel" required />
         </div>
         </div>
@@ -104,7 +104,7 @@
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
             <label for="isSigned">Signed</label>
           <div class="col-lg-6">
-            <input type="checkbox" name="isSigned" [(ngModel)]="sendPackage.isSigned" #isSigned="ngModel" required />
+            <input type="checkbox" name="isSigned" [(ngModel)]="sendPackage.isSigned" #isSigned="ngModel"  />
             <input type="hidden" name="isFragile" value="false" />
         </div>
               </div>
@@ -116,7 +116,7 @@
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
             <label for="isFragile">Fragile</label>
           <div class="col-lg-6">
-            <input type="checkbox" name="isFragile" [(ngModel)]="sendPackage.isFragile" #isFragile="ngModel" required />
+            <input type="checkbox" name="isFragile" [(ngModel)]="sendPackage.isFragile" #isFragile="ngModel"  />
             <input type="hidden" name="isFragile" value="false" />
         </div>
                 </div>
@@ -147,7 +147,7 @@
         <!--height-->
                       <div class="form-group">
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
-            <label for="height">Weight</label>
+            <label for="height">Height</label>
           <div class="col-lg-6">
             <input type="number" name="height" [(ngModel)]="sendPackage.height" #height="ngModel" required />
         </div>

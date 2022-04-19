@@ -11,7 +11,8 @@ import { AgentService } from '../agent.service';
 export class RequestVacationAComponent  {
 
   constructor(private http: HttpClient,
-    private agentService:AgentService) { }
+    private agentService:AgentService,
+    ) { }
 
 
     vacation:VacationRequestModel = {

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { forgottenPassword } from './forgottenPassword/forgottenPassword.component';
 import { Observable } from 'rxjs';
 import { Transaction } from '../transaction/transaction';
-import { PackageModel } from '../package/package';
+import { PackageReceiveModel } from '../package/package';
 
 @Injectable({
   providedIn: 'root'
@@ -60,14 +60,14 @@ forgottenModel.email = data.email
 
 
 getAllTransactions(): Observable<Transaction[]>{
-  let url = this.baseTransactionURL + '/getAllTransaction' + sessionStorage.getItem("username");
+  let url = this.baseTransactionURL + '/getAllTransaction/' + sessionStorage.getItem("username");
 return this.http.get<Transaction[]>(url)
 
 }
 
-getAllMyPackages(): Observable<PackageModel[]>{
+getAllMyPackages(): Observable<PackageReceiveModel[]>{
   let url = this.basePackageURL + '/getAllMyPackages';
-return this.http.get<PackageModel[]>(url)
+return this.http.get<PackageReceiveModel[]>(url)
 
 }
 

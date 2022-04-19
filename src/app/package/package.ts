@@ -5,7 +5,7 @@ export interface PackageModel {
     id:number;
     recipient:string;
     deliveryOffice:string;
-    deliveryToOffice:string;
+    currentLocation:string;
     deliveryType:number;
     isSigned:boolean;
     isFragile:boolean;
@@ -16,3 +16,15 @@ export interface PackageModel {
     description:string;
 }
 
+export interface PackageReceiveModel {
+    id:number;
+    recipient:any;
+    deliveryOffice:any;
+    currentLocation:any;
+    deliveryType:number;
+    isSigned:boolean;
+    isFragile:boolean;
+    weight: number;
+    trackingNumber:string;
+    description:string;
+}

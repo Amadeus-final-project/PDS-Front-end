@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../transaction.service';
 import { Transaction} from '../transaction';
@@ -11,7 +10,7 @@ import { Transaction} from '../transaction';
 })
 export class GetAllTransactionsComponent implements OnInit {
 
-  constructor(    private http: HttpClient,
+  constructor(
     private transactionService:TransactionService) { }
 
     allTransactions: Transaction[] = [];

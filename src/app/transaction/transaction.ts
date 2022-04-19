@@ -1,7 +1,7 @@
 export interface Transaction {
     id:number;
     paymentType:string;
-    payer: Object;
+    payer: any;
     price: number;
     paidAt: Date;
 }

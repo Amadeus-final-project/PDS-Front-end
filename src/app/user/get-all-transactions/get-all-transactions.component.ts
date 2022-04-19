@@ -16,7 +16,8 @@ export class GetAllMyTransactionsComponent implements OnInit {
     allTransactions: Transaction[] = [];
 
   ngOnInit() {
-    this.userService.getAllTransactions().subscribe((res:Transaction[]) => {this.allTransactions = res;});
+    this.userService.getAllTransactions().subscribe((res:Transaction[]) => {
+      this.allTransactions = res;});
   }
 
 }
