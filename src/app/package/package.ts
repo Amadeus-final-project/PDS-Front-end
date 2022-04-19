@@ -21,7 +21,7 @@ export interface PackageReceiveModel {
     recipient:any;
     deliveryOffice:any;
     currentLocation:any;
-    deliveryType:number;
+    deliveryType:any;
     isSigned:boolean;
     isFragile:boolean;
     weight: number;

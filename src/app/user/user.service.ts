@@ -37,7 +37,7 @@ export class UserService {
     let result = this.http.put<ChangePassword>(this.baseUsersURL + '/changePassword', ChangeModel
 ).subscribe((response) => {
     if (response) {
-      this.router.navigate(['/customer-home']);
+      this.router.navigate(['/logout']);
     } else {
         alert("Password request failed.")
     }

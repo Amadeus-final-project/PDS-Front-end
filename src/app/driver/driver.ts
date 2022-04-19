@@ -1,4 +1,8 @@
 export class Driver {
+    lastCheckedIn:any;
+    vehicle:any;
+    firstName!:string;
+    driverStatus!:any;
 }
 
 
@@ -10,10 +14,9 @@ export interface DriverModel{
 }
 
 export interface GetDriverModel{
-    lastCheckedIn:string;
-    vehicle:string;
+    lastCheckedIn:any;
+    vehicle:any;
     firstName:string;
-    driverStatus:string;
 }
 
 export interface WorkingAdressModel {
