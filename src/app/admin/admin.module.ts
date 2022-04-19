@@ -12,8 +12,6 @@ import { DeleteAgentComponent } from './delete-agent/delete-agent.component';
 import { DeleteOfficeComponent } from './delete-office/delete-office.component';
 import { GetAllUnapprovedVacationsComponent } from './get-all-unapproved-vacations/get-all-unapproved-vacations.component';
 import { GetAllOfficesComponent } from './get-all-offices/get-all-offices.component';
-import { GetAllAgentComponent } from './get-all-agent/get-all-agent.component';
-
 
 
 
@@ -29,7 +27,6 @@ import { GetAllAgentComponent } from './get-all-agent/get-all-agent.component';
     DeleteOfficeComponent,
     GetAllUnapprovedVacationsComponent,
     GetAllOfficesComponent,
-    GetAllAgentComponent,
   ],
   imports: [
     CommonModule,

@@ -43,6 +43,8 @@ login() { //https://localhost:9000/
     if (response) {
         sessionStorage.setItem(
           "token", response.token || "");
+          sessionStorage.setItem(
+          "username", this.model.username || "");
           this.userService.isLoggedIn = true;
           // TODO: redirect /gateway
 	this.router.navigate(['/gateway']);

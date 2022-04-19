@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TransactionService } from '../transaction/transaction.service';
-import { Transaction} from '../transaction/transaction';
+import { TransactionService } from '../transaction.service';
+import { Transaction} from '../transaction';
 
 
 @Component({
