@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { DriverService } from '../driver.service';
 
 @Component({
@@ -10,23 +8,12 @@ import { DriverService } from '../driver.service';
 })
 export class ReleaseVehicleComponent implements OnInit{
 
-  constructor(private http: HttpClient,
-    private router: Router,
+  constructor(
     private driverService: DriverService) { }
 
 
   ngOnInit(): void {
-      let result =  this.http.put<boolean>(this.driverService.baseDriverURL + '/vehicle/releaseCar', '')
-        .subscribe((response) => {
-          if (response){
-  
-            this.router.navigate(['/driver']);
-          }
-          else {
-            alert("Cant release vehicle");
-          }
-        });
-    
+    this.driverService.releaseVehicle();
   }
 
 

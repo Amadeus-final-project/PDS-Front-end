@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -8,26 +6,15 @@ import { AdminService } from '../admin.service';
   templateUrl: './delete-office.component.html',
   styleUrls: ['./delete-office.component.css']
 })
-export class DeleteOfficeComponent implements OnInit {
+export class DeleteOfficeComponent {
 
-  constructor( private router: Router,
-    private adminService: AdminService,
-    private http: HttpClient) { }
+  constructor(
+    private adminService: AdminService) { }
 
-  ngOnInit(): void {
-  }
-
-  
-  officeId: number | undefined;
+  officeId!: number;
 
   deleteOffice() {
-     let result = this.http.delete(this.adminService.baseAdminURL + '/office/' + this.officeId).subscribe((response) => {
-       if (response) {
-           this.router.navigate(['/admin']);
-       } else {
-           alert("Can't delete office")
-       }
-   });
+    this.adminService.deleteOffice(this.officeId);
    }
 
 

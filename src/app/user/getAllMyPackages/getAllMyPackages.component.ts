@@ -1,12 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from '@angular/router';
 import { PackageModel } from "src/app/package/package";
-
-// interface PackageModel {
-//     id:number;
-//     isFragile:boolean
-// }
+import { UserService } from "../user.service";
 
 
 
@@ -22,32 +17,15 @@ import { PackageModel } from "src/app/package/package";
     myPackages: PackageModel[]= [];
 
     constructor  (
-        private http: HttpClient
+        private userService:UserService
     ) {    }
 
 
-    ngOnInit(): void {
-        //let url = 'http://localhost:9000/package/getAllMyPackages';
-        let url = 'http://localhost:9000/package/getAllMyPackages';
-        let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-          if (response) {
-              this.myPackages = response;
-          } else {
-              alert("Something went wrong.")
-          }
-      });
-    }
 
-//     getAllMyPackages() {
-//         let url = 'http://localhost:9000/package/getAllMyPackages';
-//         let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-//           if (response) {
-//               this.myPackages = response;
-//           } else {
-//               alert("Something went wrong.")
-//           }
-//       });
-//       }
+    ngOnInit() {
+        this.userService.getAllMyPackages().subscribe((res:PackageModel[]) => {this.myPackages = res;});
+      }
+
 
     
  }

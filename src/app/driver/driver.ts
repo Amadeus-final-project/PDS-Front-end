@@ -9,6 +9,13 @@ export interface DriverModel{
     driverStatus:string;
 }
 
+export interface GetDriverModel{
+    lastCheckedIn:string;
+    vehicle:string;
+    firstName:string;
+    driverStatus:string;
+}
+
 export interface WorkingAdressModel {
     country:string;
     city:string;

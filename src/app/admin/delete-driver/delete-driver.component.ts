@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -8,26 +6,15 @@ import { AdminService } from '../admin.service';
   templateUrl: './delete-driver.component.html',
   styleUrls: ['./delete-driver.component.css']
 })
-export class DeleteDriverComponent implements OnInit {
+export class DeleteDriverComponent {
 
-  constructor( private router: Router,
-    private adminService: AdminService,
-    private http: HttpClient) { }
+  constructor(
+    private adminService: AdminService) { }
 
-  ngOnInit(): void {
-  }
-
-  
-  driverId: number | undefined;
+  driverId!: number;
 
   deleteDriver() {
-     let result = this.http.delete(this.adminService.baseAdminURL + '/driver/' + this.driverId).subscribe((response) => {
-       if (response) {
-           this.router.navigate(['/admin']);
-       } else {
-           alert("Can't delete driver")
-       }
-   });
+    this.adminService.deleteDriver(this.driverId);
    }
 
 

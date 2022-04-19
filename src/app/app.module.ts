@@ -9,14 +9,13 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
-import {ProfileComponent} from "./user/profile/profile.component";
+import { ProfileComponent } from "./user/profile/profile.component";
 import { ForgottenPasswordComponent } from './user/forgottenPassword/forgottenPassword.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { GetAllMyPackagesComponent} from './user/getAllMyPackages/getAllMyPackages.component';
+import { GetAllMyPackagesComponent } from './user/getAllMyPackages/getAllMyPackages.component';
 import { Authentication } from './interceptors/auth-guard';
 import { SendComponent } from './package/send/send.component';
 import { GetAllDriversComponent } from './driver/getAllDrivers/getAllDrivers.component';
-import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
 import { AddVehicleComponent } from './admin/add-vehicle/add-vehicle.component';
 import { AddDriverComponent } from './admin/add-driver/add-driver.component';
 import { AddOfficeComponent } from './admin/add-office/add-office.component';
@@ -28,8 +27,8 @@ import { DeleteOfficeComponent } from './admin/delete-office/delete-office.compo
 import { DisapprovePackageComponent } from './agent/disapprove-package/disapprove-package.component';
 import { ApprovePackageComponent } from './agent/approve-package/approve-package.component';
 import { GetVehicleComponent } from './driver/get-vehicle/get-vehicle.component';
-import {Gateway} from "./interceptors/gateway-guard";
-import {SharedModule} from "./shared/shared.module";
+import { Gateway } from "./interceptors/gateway-guard";
+import { SharedModule } from "./shared/shared.module";
 import { ReleaseVehicleComponent } from './driver/release-vehicle/release-vehicle.component';
 import { CheckInOfficeComponent } from './driver/check-in-office/check-in-office.component';
 import { StartWorkComponent } from './driver/start-work/start-work.component';
@@ -49,6 +48,8 @@ import { GetAllVehiclesComponent } from './driver/get-all-vehicles/get-all-vehic
 import { RequestVacationComponent } from './driver/request-vacation/request-vacation.component';
 import { RequestVacationAComponent } from './agent/request-vacation-a/request-vacation-a.component';
 import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.component';
+import { EditAgentProfileComponent } from './agent/edit-agent-profile/edit-agent-profile.component';
+import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
 
 
 
@@ -64,7 +65,6 @@ import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.
     GetAllMyPackagesComponent,
     SendComponent,
     GetAllDriversComponent,
-    GetAllVacationsComponent,
     AddVehicleComponent,
     AddDriverComponent,
     AddOfficeComponent,
@@ -95,6 +95,8 @@ import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.
     RequestVacationComponent,
     RequestVacationAComponent,
     GetAllOfficesComponent,
+    EditAgentProfileComponent,
+    GetAllVacationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +105,7 @@ import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.
     CoreModule,
     FormsModule,
     SharedModule,
+
   ],
   providers: [
     Authentication,

@@ -15,17 +15,14 @@ export class GetAllVehiclesComponent implements OnInit {
 
   allVehicles: VehicleModel[]= [];
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.driverService.getAllVehicles().subscribe((res:VehicleModel[]) => {
+      this.allVehicles = res;
+    });
+    
+  }
 
-    let url = 'http://localhost:9000/vehicle';
-    let result = this.http.get<VehicleModel[]>(url + '/getAllVehicles').subscribe((response) => {
-      if (response) {
-          this.allVehicles = response;
-      } else {
-          alert("Something went wrong.")
-      }
-  });
-}
+
 
 
   }

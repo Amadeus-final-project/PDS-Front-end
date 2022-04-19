@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Component} from '@angular/core';
 import {AddOfficeModel} from '../admin';
 import { AdminService } from '../admin.service';
 
@@ -9,7 +7,7 @@ import { AdminService } from '../admin.service';
   templateUrl: './add-office.component.html',
   styleUrls: ['./add-office.component.css']
 })
-export class AddOfficeComponent implements OnInit {
+export class AddOfficeComponent {
 
 
   addNewOffice:AddOfficeModel = {
@@ -21,26 +19,11 @@ export class AddOfficeComponent implements OnInit {
   street: ''
   }
 
-  constructor(    private router: Router,
-                  private adminService: AdminService,
-                  private routerModule:RouterModule,
-                  private route: ActivatedRoute,
-                  private http: HttpClient) { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(private adminService: AdminService) { }
 
 
   addOffice() {
-    //let url = 'http://localhost:9000/admin/addOffice';
-    let result = this.http.post<AddOfficeModel>(this.adminService.baseAdminURL + '/addOffice', this.addNewOffice).subscribe((response) => {
-      if (response) {
-        this.router.navigate(['/']);
-      } else {
-        alert("Can't add office.")
-      }
-    });
+    this.adminService.addOffice(this.addNewOffice);
   }
 
 }

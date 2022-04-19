@@ -1,7 +1,15 @@
 <div class="packages">
     <div class="package" *ngFor= "let p of myPackages">
         <p>Id: {{p.id}}</p>
-        <p>Id: {{p.description}}</p>
+        <p>Recipient: {{p.recipient}}</p>
+        <p>Start office: {{p.deliveryOffice}}</p>
+        <p>Destination office: {{p.deliveryToOffice}}</p>
+        <p>Delivery type: {{p.deliveryType}}</p>
+        <p>Signed: {{p.isSigned}}</p>
+        <p>Fragile: {{p.isFragile}}</p>
+        <p>Description: {{p.description}}</p>
+        <p>Weight: {{p.weight}}</p>
+        
 
     </div>
 </div>

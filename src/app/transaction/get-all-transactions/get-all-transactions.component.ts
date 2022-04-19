@@ -16,15 +16,10 @@ export class GetAllTransactionsComponent implements OnInit {
 
     allTransactions: Transaction[] = [];
 
-  ngOnInit(): void {
-    let url = this.transactionService.baseTransactionURL + '/getAllTransactions';
-    let result = this.http.get<Transaction[]>(url).subscribe((response) => {
-      if (response) {
-          this.allTransactions = response;
-      } else {
-          alert("Something went wrong.")
-      }
-  });
+  ngOnInit() {
+    this.transactionService.getAllTransactions().subscribe((res:Transaction[]) => {this.allTransactions = res;});
   }
 
 }
+
+

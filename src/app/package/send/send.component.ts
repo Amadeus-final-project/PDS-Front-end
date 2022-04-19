@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './send.component.html',
   styleUrls: ['./send.component.css']
 })
-export class SendComponent implements OnInit {
+export class SendComponent {
 
   sendPackage:PackageModel = {
     id: 0,
@@ -32,23 +32,11 @@ export class SendComponent implements OnInit {
   constructor(
     private router: Router,
     private packageService: PackageService,
-    private routerModule:RouterModule,
-    private route: ActivatedRoute,
     private http: HttpClient) { }
-
-  ngOnInit(): void {
-  }
 
 
     send() {
-       // let url = 'http://localhost:9000/package/send';
-        let result = this.http.post<PackageModel>(this.packageService.basePackageURL + '/send', this.sendPackage).subscribe((response) => {
-          if (response) {
-              this.router.navigate(['/getAllMyPackages']);
-          } else {
-              alert("Can't send package at this moment.")
-          }
-      });
+      this.packageService.send(this.sendPackage);
       }
 
 

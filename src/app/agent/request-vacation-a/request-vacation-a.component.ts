@@ -4,7 +4,7 @@ import { VacationRequestModel } from '../agent';
 import { AgentService } from '../agent.service';
 
 @Component({
-  selector: 'app-request-vacation-a',
+  selector: 'request-vacation-a',
   templateUrl: './request-vacation-a.component.html',
   styleUrls: ['./request-vacation-a.component.css']
 })
@@ -24,15 +24,8 @@ export class RequestVacationAComponent  {
     }
 
   requestVacation(){
-    let result = this.http.put(this.agentService.baseAgentURL + '/requestVacation', this.vacation).subscribe((response) => {
-      if (response) {
-          // this.router.navigate(['/']);
-        
-      } else {
-          alert("Something went wrong.")
-      }
-  });
-  }
+this.agentService.requestVacation(this.vacation);
 
 
+}
 }

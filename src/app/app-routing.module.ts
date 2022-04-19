@@ -42,6 +42,7 @@ import { GetAllVehiclesComponent } from './driver/get-all-vehicles/get-all-vehic
 import { RequestVacationComponent } from './driver/request-vacation/request-vacation.component';
 import { RequestVacationAComponent } from './agent/request-vacation-a/request-vacation-a.component';
 import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.component';
+import { EditAgentProfileComponent } from './agent/edit-agent-profile/edit-agent-profile.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -86,6 +87,8 @@ const routes: Routes = [
       {path: `request-vacation`, component: RequestVacationComponent},
       {path: `request-vacation-a`, component: RequestVacationAComponent},
       {path: `get-all-offices`, component: GetAllOfficesComponent},
+      {path: `edit-agent-profile`, component: EditAgentProfileComponent},
+
 
 
 

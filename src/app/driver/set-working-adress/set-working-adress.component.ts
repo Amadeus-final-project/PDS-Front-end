@@ -23,13 +23,7 @@ constructor(private http: HttpClient,
     };
 
     setWorkingAddress() {
-      let result = this.http.post(this.driverService.baseDriverURL + '/workingAddress', this.addressModel).subscribe((response) => {
-        if (response) {
-            this.router.navigate(['/driver']);
-        } else {
-            alert("Something went wrong.")
-        }
-    });
+      this.driverService.setWorkingAddress(this.addressModel);
   }
 
 

@@ -2,7 +2,7 @@
   <form name="profile-form" (ngSubmit)="f.form.valid && editProfile()" #f="ngForm" novalidate>
     <div [ngClass]="{ 'has-error': f.submitted}">
       <label for="phoneNumber">Phone Number</label>
-      <input type="number"
+      <input type="string"
              name="phoneNumber" [(ngModel)]="editProfileModel.phoneNumber"
              #phoneNumber="ngModel" required />
       <div *ngIf="f.submitted

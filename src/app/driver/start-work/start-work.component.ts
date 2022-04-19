@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { DriverService } from '../driver.service';
 
 @Component({
@@ -10,8 +8,7 @@ import { DriverService } from '../driver.service';
 })
 export class StartWorkComponent implements OnInit {
 
-  constructor(private http: HttpClient,
-    private router: Router,
+  constructor(
     private driverService: DriverService) { }
 
 
@@ -19,15 +16,7 @@ export class StartWorkComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    let result = this.http.put(this.driverService.baseDriverURL + '/startWork', this.packageRoutes).subscribe((response) => {
-      if (response) {
-        console.log(this.packageRoutes)
-          this.router.navigate(['/driver']);
-      } else {
-          alert("Can't start work")
-      }
-  });
+ this.driverService.startWork(this.packageRoutes);
   }
   
 

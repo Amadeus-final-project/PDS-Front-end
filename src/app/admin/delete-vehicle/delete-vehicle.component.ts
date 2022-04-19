@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -9,27 +6,15 @@ import { AdminService } from '../admin.service';
   templateUrl: './delete-vehicle.component.html',
   styleUrls: ['./delete-vehicle.component.css']
 })
-export class DeleteVehicleComponent implements OnInit {
+export class DeleteVehicleComponent {
 
-  constructor( private router: Router,
-    private adminService: AdminService,
-    private http: HttpClient) { }
+  constructor(
+    private adminService: AdminService) { }
 
-  ngOnInit(): void {
-  }
-
-  
-  vehicleId: number | undefined;
+  vehicleId!: number;
 
   deleteVehicle() {
-    // let url = 'http://localhost:9000/admin/deleteVehicle';
-     let result = this.http.delete(this.adminService.baseAdminURL + '/vehicle/' + this.vehicleId).subscribe((response) => {
-       if (response) {
-           this.router.navigate(['/admin']);
-       } else {
-           alert("Can't delete vehicle.")
-       }
-   });
+    this.adminService.deleteVehicle(this.vehicleId);
    }
 
 

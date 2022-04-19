@@ -15,15 +15,8 @@ export class GetAllMyTransactionsComponent implements OnInit {
 
     allTransactions: Transaction[] = [];
 
-  ngOnInit(): void {
-    let url = 'http://localhost:9000/transaction' + '/getAllTransaction/' + sessionStorage.getItem("username");
-    let result = this.http.get<Transaction[]>(url).subscribe((response) => {
-      if (response) {
-          this.allTransactions = response;
-      } else {
-          alert("Something went wrong.")
-      }
-  });
+  ngOnInit() {
+    this.userService.getAllTransactions().subscribe((res:Transaction[]) => {this.allTransactions = res;});
   }
 
 }

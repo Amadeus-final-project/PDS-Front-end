@@ -1,10 +1,6 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from '@angular/core';
-import { DriverModel } from "../driver";
-import { ActivatedRoute, Router } from '@angular/router';
-import { PackageModel } from "src/app/package/package";
+import { GetDriverModel } from "../driver";
 import { DriverService } from "../driver.service";
-
 
 @Component({
   selector: 'getAllDrivers',
@@ -13,23 +9,16 @@ import { DriverService } from "../driver.service";
 })
 export class GetAllDriversComponent implements OnInit {
 
-  constructor(private http: HttpClient,
+  constructor(
     private driverService: DriverService) { }
 
-  allDrivers: DriverModel[]= [];
+  allDrivers: GetDriverModel[]= [];
 
-  ngOnInit(): void {
 
-   // let url = 'http://localhost:9000/driver/getAllDrivers';
-    let result = this.http.get<DriverModel[]>(this.driverService.baseDriverURL + '/getAllDrivers').subscribe((response) => {
-      if (response) {
-          this.allDrivers = response;
-      } else {
-          alert("Something went wrong.")
-      }
+ngOnInit() {
+  this.driverService.getAllDrivers().subscribe((res:GetDriverModel[]) => {
+    this.allDrivers = res;
   });
-}
-
 
   }
-
+}

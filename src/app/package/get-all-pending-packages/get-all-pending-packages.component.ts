@@ -16,15 +16,19 @@ export class GetAllPendingPackagesComponent implements OnInit {
   constructor(    private http: HttpClient,
     private packageService:PackageService) { }
 
-  ngOnInit(): void {
-    let url = this.packageService.basePackageURL + '/getPendingPackages';
-    let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-      if (response) {
-          this.allPackages = response;
-      } else {
-          alert("Something went wrong.")
-      }
-  });
-  }
+    ngOnInit() {
+      this.packageService.getAllPendingPackages().subscribe((res:PackageModel[]) => {this.allPackages = res;});
+    }
+
+  // ngOnInit(): void {
+  //   let url = this.packageService.basePackageURL + '/getPendingPackages';
+  //   let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
+  //     if (response) {
+  //         this.allPackages = response;
+  //     } else {
+  //         alert("Something went wrong.")
+  //     }
+  // });
+  // }
 
 }

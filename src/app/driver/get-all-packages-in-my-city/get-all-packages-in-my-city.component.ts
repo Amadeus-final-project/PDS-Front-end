@@ -16,16 +16,13 @@ export class GetAllPackagesInMyCityComponent implements OnInit {
 
     allPackagesForMe: PackageModel[] = [];
 
-    ngOnInit(): void {
-      let url = this.driverService.baseDriverURL + '/getAllPackagesForMe';
-      let result = this.http.get<PackageModel[]>(url).subscribe((response) => {
-        if (response) {
-            this.allPackagesForMe = response;
-        } else {
-            alert("Something went wrong.")
-        }
-    });
+    ngOnInit() {
+      this.driverService.getAllgetAllPackagesForMeVacations().subscribe((res:PackageModel[]) => {
+        this.allPackagesForMe = res;
+      });
+      
     }
     
     }
     
+

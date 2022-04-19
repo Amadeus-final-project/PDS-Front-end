@@ -8,26 +8,17 @@ import { AgentService } from '../agent.service';
   templateUrl: './disapprove-package.component.html',
   styleUrls: ['./disapprove-package.component.css']
 })
-export class DisapprovePackageComponent implements OnInit {
+export class DisapprovePackageComponent {
 
   constructor( private router: Router,
     private agentService: AgentService,
     private http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
-
   
-  packageId: number | undefined;
+  packageId!: number;
 
   disapprovePackage() {
-     let result = this.http.put(this.agentService.baseAgentURL + '/disapprovePackage/' + this.packageId, this.packageId).subscribe((response) => {
-       if (response) {
-           this.router.navigate(['/agent']);
-       } else {
-           alert("Can't disapprove.")
-       }
-   });
+    this.agentService.disapprovePackage(this.packageId);
    }
 
 

@@ -22,26 +22,19 @@ export class GetAllUnapprovedVacationsComponent implements OnInit {
     vacationId:number = 0;
 
 
-
-    ngOnInit(): void {
-      let url = this.adminService.baseAdminURL + '/viewVacations';
-      let result = this.http.get<VacationSimpleModel[]>(url).subscribe((response) => {
-        if (response) {
-            this.allUnapproved = response;
-        } else {
-            alert("Something went wrong.")
-        }
-    });
+    ngOnInit() {
+      this.adminService.getAllUnapprovedVacations().subscribe((res:VacationSimpleModel[]) => {
+        this.allUnapproved = res;
+      });
     }
 
 
     reviewVacation() {
-      // let url = 'http://localhost:9000/package/send';
        let result = this.http.post(this.adminService.baseAdminURL + '/vacation/' + this.vacationId, this.approveVacation).subscribe((response) => {
          if (response) {
              this.router.navigate(['/viewVacations']);
          } else {
-             alert("Can't send package at this moment.")
+             alert("Something went wrong.")
          }
      });
      }

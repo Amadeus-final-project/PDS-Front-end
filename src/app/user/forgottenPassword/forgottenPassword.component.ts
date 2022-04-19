@@ -14,7 +14,7 @@ export interface forgottenPassword {
   templateUrl: './forgottenPassword.component.html',
   styleUrls: ['./forgottenPassword.component.css']
 })
-export class ForgottenPasswordComponent implements OnInit {
+export class ForgottenPasswordComponent {
 
   forgottenModel: forgottenPassword = {
     email: ''
@@ -26,8 +26,6 @@ export class ForgottenPasswordComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient) {   }
 
-
-  ngOnInit() {}
 
 // editProfile():void{
 //   let url = "http://localhost:9000/users/edit";
@@ -48,15 +46,8 @@ export class ForgottenPasswordComponent implements OnInit {
 
 forgottenPassword(): void {
   //let url = 'http://localhost:9000/users/forgottenPassword';
-  let result = this.http.put<string>(this.userService.baseUsersURL + '/forgottenPassword', 
-    this.forgottenModel.email,
-).subscribe((data:any) => {
-  this.forgottenModel.email = data.email
-    if (data) {
-      alert("New password sent to email.")
-    } else {
-        alert("Password request failed.")
-    }
-});
+  this.userService.forgottenPassword(this.forgottenModel);
 }
+
+
 }

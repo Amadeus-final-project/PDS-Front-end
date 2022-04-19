@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
 import { AddDriverModel} from '../admin';
 import { AdminService } from '../admin.service';
 
@@ -9,7 +7,7 @@ import { AdminService } from '../admin.service';
   templateUrl: './add-driver.component.html',
   styleUrls: ['./add-driver.component.css']
 })
-export class AddDriverComponent implements OnInit {
+export class AddDriverComponent {
 
 
   addNewDriver:AddDriverModel = {
@@ -21,26 +19,11 @@ export class AddDriverComponent implements OnInit {
     remainingPaidLeave:0,
   }
 
-  constructor(    private router: Router,
-                  private adminService: AdminService,
-                  private routerModule:RouterModule,
-                  private route: ActivatedRoute,
-                  private http: HttpClient) { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(private adminService: AdminService) { }
 
 
   addDriver() {
-    let url = 'http://localhost:9000/admin/addDriver';
-    let result = this.http.post<AddDriverModel>(url, this.addNewDriver).subscribe((response) => {
-      if (response) {
-        this.router.navigate(['/']);
-      } else {
-        alert("Can't add driver.")
-      }
-    });
+    this.adminService.addDriver(this.addNewDriver)
   }
 
 }
