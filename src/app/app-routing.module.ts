@@ -49,6 +49,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout', redirectTo: '/login'},
   {path: 'register', component: RegisterComponent},
+  {path: 'forgottenPassword', component: ForgottenPasswordComponent},
   {path: '', canActivate:[Authentication], children:[
       {path: 'admin-home', component: AdminHomeComponent},
       {path: 'driver-home', component: DriverHomeComponent},
@@ -56,7 +57,6 @@ const routes: Routes = [
       {path: 'customer-home', component: CustomerHomeComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'getAllMyPackages', component: GetAllMyPackagesComponent},
-      {path: 'forgottenPassword', component: ForgottenPasswordComponent},
       {path: 'send', component: SendComponent},
       {path: `getAllDrivers`, component: GetAllDriversComponent},
       {path: `get-all-vacations`, component: GetAllVacationsComponent},

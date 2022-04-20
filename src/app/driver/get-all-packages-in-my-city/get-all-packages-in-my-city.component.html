@@ -61,8 +61,15 @@
 <div class="packages move">
   <div class="form-group">
     <div class="package" *ngFor= "let p of allPackagesForMe">
-        <p>Id: {{p.id}}</p>
-        <p>Description: {{p.description}}</p>
+      <p>Id: {{p.id}}</p>
+      <p>Recipient: {{p.recipient.firstName + ' ' + p.recipient.lastName}}</p>
+      <p>Destination office: {{p.deliveryOffice.name}}</p>
+      <p>Current office: {{p.currentLocation.name}}</p>
+      <p>Delivery type: {{p.deliveryType.type}}</p>
+      <p>Signed: {{p.isSigned}}</p>
+      <p>Fragile: {{p.isFragile}}</p>
+      <p>Description: {{p.description}}</p>
+      <p>Weight: {{p.weight}}</p>
     </div>
     </div>
 </div>

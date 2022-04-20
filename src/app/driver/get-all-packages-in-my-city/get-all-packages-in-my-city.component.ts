@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PackageModel } from 'src/app/package/package';
+import { PackageReceiveModel } from 'src/app/package/package';
 import { DriverService } from '../driver.service';
 
 @Component({
@@ -14,10 +14,10 @@ export class GetAllPackagesInMyCityComponent implements OnInit {
       private driverService: DriverService
     ) { }
 
-    allPackagesForMe: PackageModel[] = [];
+    allPackagesForMe: PackageReceiveModel[] = [];
 
     ngOnInit() {
-      this.driverService.getAllgetAllPackagesForMeVacations().subscribe((res:PackageModel[]) => {
+      this.driverService.getAllgetAllPackagesForMeVacations().subscribe((res:PackageReceiveModel[]) => {
         this.allPackagesForMe = res;
       });
       

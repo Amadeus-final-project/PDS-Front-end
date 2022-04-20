@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
 
 
 export interface forgottenPassword {
@@ -21,10 +18,7 @@ export class ForgottenPasswordComponent {
   };
 
   constructor(
-    private userService: UserService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private http: HttpClient) {   }
+    private userService: UserService) {   }
 
 
 // editProfile():void{

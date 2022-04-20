@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PackageModel } from '../package/package';
+import { PackageModel, PackageReceiveModel } from '../package/package';
 import { GetDriverModel, VacationModel, VehicleModel, WorkingAdressModel } from './driver';
 
 @Injectable({
@@ -27,7 +27,7 @@ export class DriverService {
      }
 
 
-     getAllgetAllPackagesForMeVacations (): Observable<PackageModel[]> {return this.http.get<PackageModel[]>(this.baseDriverURL + '/getAllPackagesForMe');}
+     getAllgetAllPackagesForMeVacations (): Observable<PackageReceiveModel[]> {return this.http.get<PackageReceiveModel[]>(this.baseDriverURL + '/getAllPackagesForMe');}
 
      getAllVehicles(): Observable<VehicleModel[]> {
       return this.http.get<VehicleModel[]>('http://localhost:9000/vehicle'+ '/getAllVehicles');

@@ -1,9 +1,7 @@
 <div class="drivers">
     <div class="driver" *ngFor= "let d of allDrivers">
-        <p>Office: {{d.lastCheckedIn}}</p>
-        <p>Vehicle: {{d.vehicle}}</p>
+        <p>Last Checked-in office: {{d.lastCheckedIn.name}}</p>
         <p>Name: {{d.firstName}}</p>
-        <p>Status: {{d.driverStatus}}</p>
         <p>--------------------</p>
     </div>
 </div>
