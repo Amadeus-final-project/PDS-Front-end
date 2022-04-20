@@ -13,6 +13,7 @@ html,body{
   margin-left: 40%;
   margin-top: 2%;
   font-size: 25px;
+  background-color: grey;
 }
 body{
   background-color: aliceblue;
@@ -22,7 +23,6 @@ body{
   font-size: 28px;
   border-radius: 17px ;
   margin-top: 2%;
-  background-color: grey;
 }
 
 #navbarResponsive{

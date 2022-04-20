@@ -9,6 +9,9 @@ import { PackageModel } from '../package';
   styleUrls: ['./send.component.css']
 })
 export class SendComponent {
+  
+  
+  offices: string[] = ['Sofia', 'Plovdiv', 'Varna'];
 
   sendPackage:PackageModel = {
     id: 0,
@@ -29,6 +32,7 @@ export class SendComponent {
     private packageService: PackageService) { }
 
     send() {
+      console.log(this.sendPackage.deliveryOffice)
       this.packageService.send(this.sendPackage);
       }
 

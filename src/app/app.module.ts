@@ -50,6 +50,7 @@ import { RequestVacationAComponent } from './agent/request-vacation-a/request-va
 import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.component';
 import { EditAgentProfileComponent } from './agent/edit-agent-profile/edit-agent-profile.component';
 import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
+import { GetAllAgentsComponent } from './admin/get-all-agents/get-all-agents.component';
 
 
 
@@ -96,7 +97,8 @@ import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vaca
     RequestVacationAComponent,
     GetAllOfficesComponent,
     EditAgentProfileComponent,
-    GetAllVacationsComponent
+    GetAllVacationsComponent,
+    GetAllAgentsComponent
   ],
   imports: [
     BrowserModule,

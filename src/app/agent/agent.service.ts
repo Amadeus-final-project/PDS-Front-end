@@ -22,21 +22,17 @@ export class AgentService {
   approvePackage(packageId:number) {
     let result = this.http.put(this.baseAgentURL + '/approvePackage/' + packageId, {}).subscribe((response) => {
       if (response) {
-          this.router.navigate(['/agent']);
-      } else {
-          alert("Can't approve")
+          this.router.navigate(['/agent-home']);
       }
-  });
+  },(errorResponse => alert(errorResponse.error.message)));
   }
 
   disapprovePackage(packageId:number) {
     let result = this.http.put(this.baseAgentURL + '/disapprovePackage/' + packageId,{}).subscribe((response) => {
       if (response) {
-          this.router.navigate(['/agent']);
-      } else {
-          alert("Can't disapprove.")
+          this.router.navigate(['/agent-home']);
       }
-  });
+  },(errorResponse => alert(errorResponse.error.message)));
   }
 
 
@@ -45,11 +41,9 @@ export class AgentService {
     let result =  this.http.put<EditUser>(this.baseAgentURL + '/edit', editProfileModel)
       .subscribe((response) => {
         if (response) {
-          this.router.navigate(['/']);
-        }else {
-          alert("Edit profile failed");
+          this.router.navigate(['/agent-home']);
         }
-      })
+      },(errorResponse => alert(errorResponse.error.message)))
   }
 
   getAllVacations (): Observable<VacationModel[]> {return this.http.get<VacationModel[]>(this.baseAgentURL + '/viewAllVacations');}
@@ -58,10 +52,8 @@ export class AgentService {
     let result = this.http.put(this.baseAgentURL + '/requestVacation', vacation).subscribe((response) => {
       if (response) {
          this.router.navigate(['/agent-home']);
-      } else {
-          alert("Something went wrong.")
       }
-  });
+  },(errorResponse => alert(errorResponse.error.message)));
   }
 
 }

@@ -29,10 +29,8 @@ return this.http.get<PackageReceiveModel[]>(this.basePackageURL + '/getAllPackag
     let result = this.http.post<PackageModel>(this.basePackageURL + '/send', sendPackage).subscribe((response) => {
       if (response) {
           this.router.navigate(['/getAllMyPackages']);
-      } else {
-          alert("Can't send package at this moment.")
       }
-  });
+  },(errorResponse => alert(errorResponse.error.message)));
   }
 
 

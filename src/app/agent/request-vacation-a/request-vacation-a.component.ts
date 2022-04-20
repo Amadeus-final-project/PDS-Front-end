@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { VacationRequestModel } from '../agent';
 import { AgentService } from '../agent.service';
 
@@ -10,9 +9,8 @@ import { AgentService } from '../agent.service';
 })
 export class RequestVacationAComponent  {
 
-  constructor(private http: HttpClient,
-    private agentService:AgentService,
-    ) { }
+  constructor(
+    private agentService:AgentService) { }
 
 
     vacation:VacationRequestModel = {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EditUser, IUser, RegisterUser, forgottenUser, ChangePassword} from './user';
+import {EditUser, IUser, RegisterUser, ChangePassword} from './user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { forgottenPassword } from './forgottenPassword/forgottenPassword.component';
@@ -38,10 +38,8 @@ export class UserService {
 ).subscribe((response) => {
     if (response) {
       this.router.navigate(['/logout']);
-    } else {
-        alert("Password request failed.")
     }
-});
+},(errorResponse => alert(errorResponse.error.message)));
   }
 
 
@@ -52,10 +50,8 @@ forgottenPassword(forgottenModel:forgottenPassword){
 forgottenModel.email = data.email
   if (data) {
     alert("New password sent to email.")
-  } else {
-      alert("Password request failed.")
   }
-});
+},(errorResponse => alert(errorResponse.error.message)));
 }
 
 

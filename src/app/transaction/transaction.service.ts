@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Transaction } from './transaction';
 
@@ -11,8 +10,7 @@ export class TransactionService {
 
   public baseTransactionURL ="http://localhost:9000/transaction";
 
-  constructor(private http: HttpClient,
-    private router: Router) { }
+  constructor(private http: HttpClient) { }
 
     getAllTransactions(): Observable<Transaction[]>{
         let url = this.baseTransactionURL + '/getAllTransactions';

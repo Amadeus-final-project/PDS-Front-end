@@ -1,10 +1,13 @@
 <div class="offices">
-    <div class="office" *ngFor= "let o of allOffices">
+    <div class="office" *ngFor= "let o of allOffices">   
+        <div class="box">
         <p>Name: {{o.name}}</p>
         <p>Country: {{o.country}}</p>
         <p>City: {{o.city}}</p>
         <p>Post code: {{o.postcode}}</p>
         <p>Region: {{o.region}}</p>
+        <br>
+        </div>
     </div>
 </div>
 
