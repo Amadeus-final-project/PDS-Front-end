@@ -93,12 +93,12 @@
             
             
                     <div [ngClass]="{ 'has-error': f.submitted}">
-                        <input type="radio" id="approve" name="delivery" value="1" vacationId = v.vacationId name="approve"
+                        <input type="radio" id="approve" name="delivery" value="1|{{v.vacationId}}" name="approve"
                             [(ngModel)]="approveVacation"  #approve="ngModel" required>
                         <label for="approve">Approve</label>
                         
                         
-                        <input type="radio" id="disapprove" name="delivery" value="2" vacationId = v.vacationId name="disapprove"
+                        <input type="radio" id="disapprove" name="delivery" value="2|{{v.vacationId}}" name="disapprove"
                             [(ngModel)]="approveVacation" #disapprove="ngModel" required>
                         <input type="hidden" name="approveVacation" value="2" />
                         <label for="disapprove">Disapprove</label><br>

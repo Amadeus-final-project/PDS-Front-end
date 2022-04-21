@@ -18,7 +18,7 @@ export class GetAllUnapprovedVacationsComponent implements OnInit {
     allUnapproved: VacationSimpleModel[] = [];
 
 
-    approveVacation:boolean = true;
+    approveVacation:string = '';
     vacationId:number = 0;
 
 
@@ -30,13 +30,28 @@ export class GetAllUnapprovedVacationsComponent implements OnInit {
 
 
     reviewVacation() {
-       let result = this.http.post(this.adminService.baseAdminURL + '/vacation/' + this.vacationId, this.approveVacation).subscribe((response) => {
-         if (response) {
-             this.router.navigate(['/viewVacations']);
-         } else {
-             alert("Something went wrong.")
-         }
-     });
+
+      if (this.approveVacation.split("|")[0] === "1"){
+        let result = this.http.post(this.adminService.baseAdminURL + '/approveVacation/' + this.approveVacation.split("|")[1], this.approveVacation).subscribe((response) => {
+          if (response) {
+              this.router.navigate(['/viewVacations']);
+          } else {
+              alert("Something went wrong.")
+          }
+      });
+
+      }else if (this.approveVacation.split("|")[0] === "2"){
+        let result = this.http.post(this.adminService.baseAdminURL + '/disapproveVacation/' + this.approveVacation.split("|")[1], this.approveVacation).subscribe((response) => {
+          if (response) {
+              this.router.navigate(['/viewVacations']);
+          } else {
+              alert("Something went wrong.")
+          }
+      });
+      }
+
+
+
      }
 
 
