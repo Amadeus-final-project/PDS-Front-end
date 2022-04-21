@@ -1,61 +1,79 @@
 <body>
-<a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
-<span class="navbar-text"> Най - надежндните доставки в страната
-  </span>
-
-<nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
-
-  <a class="navbar-brand under" href="/">PDS</a>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Home</a></li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          Agent
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/add-agent">Add Agent</a>
-          <a class="dropdown-item" href="/delete-agent">Delete Agent</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          Vehicle
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/add-vehicle">Add Vehicle</a>
-          <a class="dropdown-item" href="/delete-vehicle">Delete Vehicle</a>
-        </div>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          Office
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/add-office">Add Office</a>
-          <a class="dropdown-item" href="/delete-office">Delete Office</a>
-        </div>
-      </li>
-
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          Driver
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/add-driver">Add Driver</a>
-          <a class="dropdown-item" href="/delete-driver">Delete Driver</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
+  <span class="navbar-text"> Най - надеждните доставки в страната
+    </span>
+  
+  <nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
+  
+    <a class="navbar-brand under" href="/">PDS</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-home">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Agent
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/add-agent">Add Agent</a>
+            <a class="dropdown-item" href="/delete-agent">Delete Agent</a>
+            <a class="dropdown-item" href="/get-all-agents">Get All Agents</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Vehicle
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/add-vehicle">Add Vehicle</a>
+            <a class="dropdown-item" href="/delete-vehicle">Delete Vehicle</a>
+            <a class="dropdown-item" href="/get-all-vehicles">Get All Vehicles</a>
+          </div>
+        </li>
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Office
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/add-office">Add Office</a>
+            <a class="dropdown-item" href="/delete-office">Delete Office</a>
+            <a class="dropdown-item" href="/get-all-offices">Get All Offices</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Vacations
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/get-all-unapproved-vacations">Get All Vacations</a>
+            <a class="dropdown-item" href="/delete-office">Approve Vacation</a>
+          </div>
+        </li>
+  
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            Driver
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/add-driver">Add Driver</a>
+            <a class="dropdown-item" href="/delete-driver">Delete Driver</a>
+            <a class="dropdown-item" href="/getAllDrivers">Check All Drivers</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a></li>
+      </ul>
+  
+    </div>
+  </nav>
+  
 <div class ="container move">
     <form class="deleteVehicle" (ngSubmit)="f.form.valid && deleteVehicle()" #f="ngForm" novalidate>
         <div [ngClass]="{ 'has-error': f.submitted}">

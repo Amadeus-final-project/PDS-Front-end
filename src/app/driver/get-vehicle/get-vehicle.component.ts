@@ -10,6 +10,8 @@ import { DriverService } from '../driver.service';
 })
 export class GetVehicleComponent {
 
+  
+
   constructor(private http: HttpClient,
     private router: Router,
     private driverService:DriverService) { }

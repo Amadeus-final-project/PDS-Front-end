@@ -1,7 +1,7 @@
 
 <body>
 <a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
-<span class="navbar-text"> Най - надежндните доставки в страната
+<span class="navbar-text"> Най - надеждните доставки в страната
   </span>
 
 <nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
@@ -60,16 +60,14 @@
         </div>
 
 
-        
-
         <!-- deliveryFrom office -->
         <div class="form-group">
         <div [ngClass]="{ 'has-error': packageForm.submitted}">
             <label for="deliveryOffice">Delivery From</label>
           <div class="col-lg-6">
             <select [(ngModel)]="sendPackage.deliveryOffice" #deliveryOffice="ngModel" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-              <option selected >Open this select menu</option>
-              <option *ngFor="let o of offices" [ngValue]="o">{{o}}</option>
+              <option selected >Офиси</option>
+              <option *ngFor="let o of offices" value="o">{{o}}</option>
               <!-- <option name="deliveryOffice" #deliveryOffice="ngModel" [(ngModel)]="sendPackage.deliveryOffice" value="Sofia">Sofia</option>
               <option name="deliveryOffice" #deliveryOffice="ngModel" [(ngModel)]="sendPackage.deliveryOffice" value="Plovdiv">Plovdiv</option>
               <option name="deliveryOffice" #deliveryOffice="ngModel"[(ngModel)]="sendPackage.deliveryOffice" value="Varna">Varna</option> -->

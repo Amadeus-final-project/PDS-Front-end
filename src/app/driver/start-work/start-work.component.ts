@@ -13,7 +13,9 @@ export class StartWorkComponent {
   constructor(
     private driverService: DriverService) { }
 
-
+  
+    offices: string[] = ['5.Sofia','6.Varna', '7.Plovdiv', '8.Burgas'];
+    
     array:string = '';
 
 

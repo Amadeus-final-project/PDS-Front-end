@@ -11,7 +11,7 @@ import { PackageModel } from '../package';
 export class SendComponent {
   
   
-  offices: string[] = ['Sofia', 'Plovdiv', 'Varna'];
+  offices: string[] = ['5.Sofia','6.Varna', '7.Plovdiv', '8.Burgas'];
 
   sendPackage:PackageModel = {
     id: 0,

@@ -3,3 +3,60 @@
     color: white;
     font-size: 22px;
  }
+ *{
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration:none;
+  }
+  html,body{
+    height:100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color:#222;
+  }
+  .move{
+    margin-left: 40%;
+    margin-top: 2%;
+    font-size: 25px;
+  }
+  body{
+    background-color: aliceblue;
+  }
+  .centerButton{
+    margin-left:10%;
+    font-size: 28px;
+    border-radius: 17px ;
+    margin-top: 2%;
+    background-color: grey;
+  }
+  
+  #navbarResponsive{
+    font-size:20px;
+    margin-right:6%;
+  }
+  .nav-item{
+    padding-left:10px;
+    margin-right:auto;
+  }
+  .logo{
+    margin-left:10%;
+  
+  }
+  .navbar-text{
+    font-size:42px;
+    margin-left:35%;
+  }
+  .navbar-brand{
+    margin-left:10%;
+  }
+  .under{
+    font-size:42px;
+    color: grey;
+  }
+  .padding{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  

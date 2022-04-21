@@ -1,3 +1,51 @@
+<body>
+    <a class="navbar-brand logo"><img src="/assets/img/PDS.png" alt="image"> </a>
+    <span class="navbar-text"> Най - надеждните доставки в страната
+      </span>
+    
+    <nav class="navbar navbar-expand-md navbar-dark  bg-dark sticky-top">
+    
+      <a class="navbar-brand under" href="/">PDS</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/customer-home">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              Profile
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/change-password">Change Password</a>
+              <a class="dropdown-item" href="/profile">Edit Profile</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              Transaction
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/get-all-my-transactions">Get All Transactions</a>
+            </div>
+          </li>
+    
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              Package
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/getAllMyPackages">Get all packages</a>
+              <a class="dropdown-item" href="/send">Send package</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container move">
 <div class="transactions">
     <div class="transaction" *ngFor= "let t of allTransactions">
         <p>Id: {{t.id}}</p>
@@ -6,5 +54,7 @@
         <p>Price: {{t.price}}</p>
         <p>Paid at: {{t.paidAt}}</p>
         <br>
+        </div>
+
     </div>
 </div>

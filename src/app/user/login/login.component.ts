@@ -41,6 +41,6 @@ login() {
     } else {
         alert("Authentication failed.")
     }
-}, (error => alert(error)));
+});
 }
 }

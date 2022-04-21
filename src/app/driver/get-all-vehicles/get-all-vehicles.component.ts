@@ -13,7 +13,7 @@ export class GetAllVehiclesComponent implements OnInit {
   constructor(private http: HttpClient,
     private driverService: DriverService) { }
 
-  allVehicles: VehicleModel[]= [];
+  public allVehicles: VehicleModel[]= [];
 
   ngOnInit() {
     this.driverService.getAllVehicles().subscribe((res:VehicleModel[]) => {

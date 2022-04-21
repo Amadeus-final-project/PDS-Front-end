@@ -44,6 +44,7 @@ export interface VacationSimpleModel {
 }
 
 export interface OfficeModel {
+  id:number;
   name: string;
   country: string;
   city: string;
@@ -53,6 +54,7 @@ export interface OfficeModel {
 }
 
 export interface AgentModel {
+  id:number;
   firstName: string;
   lastName: string;
   phoneNumber: string;
