@@ -51,6 +51,7 @@ import { GetAllOfficesComponent } from './admin/get-all-offices/get-all-offices.
 import { EditAgentProfileComponent } from './agent/edit-agent-profile/edit-agent-profile.component';
 import { GetAllVacationsComponent } from './agent/get-all-vacations/get-all-vacations.component';
 import { GetAllAgentsComponent } from './admin/get-all-agents/get-all-agents.component';
+import { AdminHeaderComponent } from './core/admin-header/admin-header.component';
 
 
 

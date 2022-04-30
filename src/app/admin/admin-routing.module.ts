@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AddVehicleComponent } from './add-vehicle/add-vehicle.component';
 import {AddAgentComponent} from "./add-agent/add-agent.component";
 import {AddDriverComponent} from "./add-driver/add-driver.component";
 import {AddOfficeComponent} from "./add-office/add-office.component";
+
 
 
 const routes: Routes = [
@@ -23,7 +23,11 @@ const routes: Routes = [
   {
     path: 'add-office',
     component:AddOfficeComponent
-  }
+  },
+  // {
+  //   path: 'app-admin-header',
+  //   component:AdminHeaderComponent
+  // }
 
 ];
 

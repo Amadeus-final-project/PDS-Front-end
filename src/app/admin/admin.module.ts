@@ -12,7 +12,8 @@ import { DeleteAgentComponent } from './delete-agent/delete-agent.component';
 import { DeleteOfficeComponent } from './delete-office/delete-office.component';
 import { GetAllUnapprovedVacationsComponent } from './get-all-unapproved-vacations/get-all-unapproved-vacations.component';
 import { GetAllOfficesComponent } from './get-all-offices/get-all-offices.component';
-import { GetAllAgentsComponent } from './get-all-agent/get-all-agents/get-all-agents.component';
+import { CoreModule } from '../core/core.module';
+
 
 
 
@@ -28,12 +29,12 @@ import { GetAllAgentsComponent } from './get-all-agent/get-all-agents/get-all-ag
     DeleteOfficeComponent,
     GetAllUnapprovedVacationsComponent,
     GetAllOfficesComponent,
-    GetAllAgentsComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
+    CoreModule
   ]
 })
 export class AdminModel { }
